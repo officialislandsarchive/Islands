@@ -176,7 +176,7 @@ body {
     color: #e52e71;
     font-size: 20px; /* Larger font size */
     margin-top: 10px;
-    margin-right: 50px; /* Move coin value to the right */
+    margin-right: auto; /* Move coin value to the right */
     padding: 5px 15px; /* Increase padding */
     border-radius: 15px; /* Rounded corners */
     background-color: #333; /* Background color */
