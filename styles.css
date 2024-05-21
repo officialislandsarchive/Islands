@@ -177,11 +177,11 @@ body {
     color: #e52e71;
     font-size: 20px; /* Larger font size */
     margin-top: 10px;
-    margin-left: 20px; /* Move coin value to the left */
-    display: inline-block; /* Display as block */
-    background-color: #222; /* Background color for better contrast */
-    padding: 5px 10px; /* Padding for the coin value */
-    border-radius: 10px; /* Rounded corners */
+    margin-left: auto; /* Move coin value to the right */
+    padding: 5px 15px; /* Increase padding */
+    border-radius: 15px; /* Rounded corners */
+    background-color: #333; /* Background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Box shadow */
 }
 
 .coin-value:before {
