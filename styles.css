@@ -127,7 +127,6 @@ body {
         opacity: 1;
     }
 }
-/* Existing CSS */
 .close {
     color: #fff;
     float: right;
@@ -155,7 +154,7 @@ body {
 
 .item-box:hover {
     transform: translateY(-5px);
-    background: #121212; /* Darker background on hover */
+    background: #121212; 
 }
 
 .item-details {
@@ -165,36 +164,32 @@ body {
 
 .item-name {
     font-weight: bold;
-    font-size: 24px; /* Larger font size */
+    font-size: 24px; */
     margin-bottom: 10px;
     color: #ff8a00;
     text-transform: uppercase;
-    letter-spacing: 1px; /* Slight letter spacing */
+    letter-spacing: 1px; 
 }
 
 .coin-value {
     color: #e52e71;
-    font-size: 20px; /* Larger font size */
+    font-size: 20px; 
     margin-top: 10px;
-    margin-left: 4; /* Move coin value to the right */
-    padding: 5px 15px; /* Increase padding */
-    border-radius: 15px; /* Rounded corners */
-    background-color: #333; /* Background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Box shadow */
+    margin-left: 4; 
+    padding: 5px 15px; 
+    border-radius: 15px; 
+    background-color: #333; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .coin-value:before {
-    content: "Coin Value: "; /* Prefix before coin value */
-    color: #ff8a00; /* Prefix color */
+    content: "Coin Value: "; 
+    color: #ff8a00; 
     font-weight: bold;
 }
-/* Additional CSS */
+
 .modal {
-    /* Existing styles */
 }
 
 .modal-content {
-    /* Existing styles */
 }
-
-/* You can add any additional styles here */
