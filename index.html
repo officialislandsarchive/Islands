@@ -35,3 +35,31 @@
 <script src="script.js"></script> 
 </body>
 </html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Website</title>
+</head>
+<body>
+  <h1>Hello from the frontend!</h1>
+  
+  <script>
+    // Fetch data from the backend
+    fetch('https://replit.com/@officialislands/Nodejs')
+      .then(response => response.json())
+      .then(data => {
+        // Update the frontend UI with the data
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>
