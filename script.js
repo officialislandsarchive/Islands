@@ -2,6 +2,10 @@ let modal = document.getElementById('myModal');
 let searchButton = document.getElementById("search");
 let searchEntry = document.getElementById("searchInput");
 
+const serverUrl = 'https://75826d22-7acd-4d09-894e-52afb04664e5-00-2uyhfbkphtnz4.spock.replit.dev:3001/';
+
+fetchJson()
+
 let items = {
     "crops": [
         { name: "Wheat", value: "10" },
@@ -222,3 +226,30 @@ function getCoinValue(name) {
 }
 
 searchButton.onclick = handleSearch
+
+function updateJson(data) {
+    let ind = 0;
+
+    for (let key in items) {
+        key[items].forEach(function (x, y) {
+            ind = ind + 1
+            x.value = data[ind].toString()
+        })
+    }
+}
+
+function fetchJson() {
+
+    fetch(serverUrl)
+    .then(response => response.text())
+    .then(data => {
+        // Log the data received from the server
+        console.log('Data received from server:', data);
+        data = JSON.parse(data)
+        updateJson(data)
+    })
+    .catch(error => {
+        // Log any errors
+        console.log('Error:', error);
+    });
+}
