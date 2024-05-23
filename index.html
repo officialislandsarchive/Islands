@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Islands Inventory Catalog</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .buttons-container-left {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .btn {
+            flex: 1 1 30%; /* Adjust button size as needed */
+            margin: 5px;
+        }
+        .discord-btn-container {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 <div class="header">
@@ -20,7 +35,9 @@
         <button class="btn" onclick="openModal('slimeIsland')">Slime Island</button>
         <button class="btn" onclick="openModal('tools')">Tools</button>
         <button class="btn" onclick="openModal('ore')">Ore</button>
-        <button class="btn" onclick="window.location.href='https://discord.gg/y8zgDYQUg2'" style="margin-top: 10px;">Join our Discord Server</button>
+        <div class="discord-btn-container">
+            <button class="btn" onclick="window.location.href='https://discord.gg/y8zgDYQUg2'">Join our Discord Server</button>
+        </div>
     </div>
     <div class="search-container-right">
         <input type="text" id="searchInput" placeholder="Search for items..." class="search-bar">
