@@ -19,6 +19,7 @@ body {
     padding: 20px 50px;
     background: #444;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .title {
@@ -61,15 +62,16 @@ body {
 }
 
 .discord-btn {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
 .discord-btn .btn {
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
-    background-color: #7289da;
+    background-color: #7289da; /* Discord blue color */
 }
 
 .search-container-right {
@@ -149,7 +151,6 @@ body {
     cursor: pointer;
     transition: color 0.3s ease-in-out;
 }
-
 .close:hover,
 .close:focus {
     color: #ff8a00;
@@ -168,7 +169,7 @@ body {
 
 .item-box:hover {
     transform: translateY(-5px);
-    background: #121212; 
+    background: #121212;
 }
 
 .item-details {
@@ -182,22 +183,28 @@ body {
     margin-bottom: 10px;
     color: #ff8a00;
     text-transform: uppercase;
-    letter-spacing: 1px; 
+    letter-spacing: 1px;
 }
 
 .coin-value {
     color: #e52e71;
-    font-size: 20px; 
+    font-size: 20px;
     margin-top: 10px;
-    margin-left: 4; 
-    padding: 5px 15px; 
-    border-radius: 15px; 
-    background-color: #333; 
+    margin-left: 4;
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: #333;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .coin-value:before {
-    content: "Coin Value: "; 
-    color: #ff8a00; 
+    content: "Coin Value: ";
+    color: #ff8a00;
     font-weight: bold;
+}
+
+.modal {
+}
+
+.modal-content {
 }
