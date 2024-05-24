@@ -4,97 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Islands Inventory Catalog</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #161616;
-            color: #fff;
-        }
-
-        .header {
-            background-color: #222;
-            padding: 30px;
-            text-align: center;
-            border-bottom: 2px solid #444;
-        }
-
-        .title {
-            font-size: 36px;
-            margin: 0;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .btn {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 18px;
-            margin: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #45a049;
-        }
-
-        .discord-btn {
-            margin-top: 30px;
-        }
-
-        .discord-btn .btn {
-            padding: 12px 24px;
-            font-size: 16px;
-            border-radius: 10px;
-        }
-
-        .search-container {
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .search-bar {
-            padding: 12px 20px;
-            width: 400px;
-            border: none;
-            border-radius: 20px;
-            font-size: 16px;
-            margin-right: 10px;
-        }
-
-        .search-btn {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 12px 24px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .search-btn:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
@@ -119,10 +29,20 @@
     </div>
     
     <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search for items..." class="search-bar">
-        <button class="search-btn" id="search">Search</button>
+             <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
+        <button id="search" class="search-btn">Search</button>
     </div>
 </div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <div id="modalItems"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
