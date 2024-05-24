@@ -7,30 +7,31 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #161616;
+            color: #fff;
         }
 
         .header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+            background-color: #222;
+            padding: 30px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            border-bottom: 2px solid #444;
         }
 
         .title {
             font-size: 36px;
-            margin-bottom: 20px;
-            font-weight: bold;
+            margin: 0;
+            font-weight: 700;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .buttons-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 30px;
         }
 
         .btn {
@@ -41,9 +42,9 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 20px;
+            font-size: 18px;
             margin: 10px;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -57,34 +58,35 @@
         }
 
         .discord-btn .btn {
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 10px;
         }
 
         .search-container {
-            margin-top: 20px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
         }
 
         .search-bar {
-            padding: 10px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 12px 20px;
+            width: 400px;
+            border: none;
+            border-radius: 20px;
             font-size: 16px;
             margin-right: 10px;
-            box-sizing: border-box;
         }
 
         .search-btn {
             background-color: #4CAF50;
             border: none;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-align: center;
             text-decoration: none;
-            display: inline-block;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -97,7 +99,7 @@
 <body>
 
 <div class="header">
-    <div class="title">Islands Archive Price Guide</div>
+    <div class="title">Islands Inventory Catalog</div>
     
     <div class="buttons-container">
         <button class="btn" onclick="openModal('crops')">Crops</button>
