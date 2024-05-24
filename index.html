@@ -4,65 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Islands Inventory Catalog</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
         }
+
         .header {
             background-color: #333;
             color: #fff;
-            padding: 20px 10px;
+            padding: 20px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
+
         .title {
-            font-size: 2em;
-            margin: 0;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
         }
-        .buttons-container-left {
+
+        .buttons-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            margin: 20px 0;
+            flex-wrap: wrap;
         }
+
         .btn {
             background-color: #4CAF50;
             border: none;
             color: white;
-            padding: 10px 20px;
-            margin: 10px;
+            padding: 15px 30px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
+            font-size: 20px;
+            margin: 10px;
             border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s;
         }
+
         .btn:hover {
             background-color: #45a049;
         }
-        .discord-btn-container {
-            width: 100%;
-            text-align: center;
+
+        .discord-btn {
+            margin-top: 30px;
+        }
+
+        .discord-btn .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        .search-container {
             margin-top: 20px;
         }
-        .search-container-right {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
+
         .search-bar {
-            width: 200px;
             padding: 10px;
+            width: 300px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 16px;
             margin-right: 10px;
+            box-sizing: border-box;
         }
+
         .search-btn {
             background-color: #4CAF50;
             border: none;
@@ -73,77 +85,42 @@
             display: inline-block;
             font-size: 16px;
             border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s;
         }
+
         .search-btn:hover {
             background-color: #45a049;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-            padding-top: 60px;
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
+
 <div class="header">
     <div class="title">Islands Archive Price Guide</div>
-</div>
-<div class="buttons-container-left">
-    <button class="btn" onclick="openModal('crops')">Crops</button>
-    <button class="btn" onclick="openModal('blocks')">Blocks</button>
-    <button class="btn" onclick="openModal('totems')">Totems</button>
-    <button class="btn" onclick="openModal('industrial')">Industrial</button>
-    <button class="btn" onclick="openModal('stations')">Stations</button>
-    <button class="btn" onclick="openModal('cooking')">Cooking</button>
-    <button class="btn" onclick="openModal('seeds')">Seeds</button>
-    <button class="btn" onclick="openModal('slimeIsland')">Slime Island</button>
-    <button class="btn" onclick="openModal('tools')">Tools</button>
-    <button class="btn" onclick="openModal('ore')">Ore</button>
-    <div class="discord-btn-container">
+    
+    <div class="buttons-container">
+        <button class="btn" onclick="openModal('crops')">Crops</button>
+        <button class="btn" onclick="openModal('blocks')">Blocks</button>
+        <button class="btn" onclick="openModal('totems')">Totems</button>
+        <button class="btn" onclick="openModal('industrial')">Industrial</button>
+        <button class="btn" onclick="openModal('stations')">Stations</button>
+        <button class="btn" onclick="openModal('cooking')">Cooking</button>
+        <button class="btn" onclick="openModal('seeds')">Seeds</button>
+        <button class="btn" onclick="openModal('slimeIsland')">Slime Island</button>
+        <button class="btn" onclick="openModal('tools')">Tools</button>
+        <button class="btn" onclick="openModal('ore')">Ore</button>
+    </div>
+    
+    <div class="discord-btn">
         <button class="btn" onclick="window.location.href='https://discord.gg/y8zgDYQUg2'">Join our Discord Server</button>
     </div>
-</div>
-<div class="search-container-right">
-    <input type="text" id="searchInput" placeholder="Search for items..." class="search-bar">
-    <button class="search-btn" id="search">Search</button>
-</div>
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2 class="modal-title" id="modalTitle"></h2>
-        <div id="modalItems" class="modal-items"></div>
+    
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for items..." class="search-bar">
+        <button class="search-btn" id="search">Search</button>
     </div>
 </div>
-<script src="script.js"></script>
+
 </body>
 </html>
