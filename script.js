@@ -131,7 +131,7 @@ function openModal(category) {
     list.innerHTML = "";
 
     items[category].forEach(function(item) {
-        var itemBox = document.createElement("div");
+        let itemBox = document.createElement("div");
         itemBox.classList.add("item-box");
 
         let itemName = document.createElement("span");
@@ -167,7 +167,7 @@ function handleSearch() {
     for (let key in items) {
         items[key].forEach(function(x) {
             x = x.name
-    
+
             if (x.toLowerCase().includes(keyword)) {
                 results.push({name: x, value: "5"});
             }
@@ -175,7 +175,6 @@ function handleSearch() {
     }
 
     openModelFromArray(results);
-    console.log(results);
 }
 
 function openModelFromArray(array) {
@@ -188,15 +187,15 @@ function openModelFromArray(array) {
     array.forEach(function(item) {
         let itemBox = document.createElement("div");
         itemBox.classList.add("item-box");
-    
+
         let itemName = document.createElement("span");
         itemName.classList.add("item-name");
         itemName.textContent = item.name;
-    
+
         let coinValue = document.createElement("span");
         coinValue.classList.add("coin-value");
         coinValue.textContent = "Coin Value: " + getCoinValue(item.name);
-    
+
         itemBox.appendChild(itemName);
         itemBox.appendChild(coinValue);
         list.appendChild(itemBox);
@@ -207,22 +206,13 @@ function openModelFromArray(array) {
 
 function getCoinValue(name) {
     for (let key in items) {
-
-        items[key].forEach(function(val) {
+        for (let val of items[key]) {
             if (val.name.toLowerCase() == name.toLowerCase()) {
-
-                return val.value;
-            }
-        })
-
-        for (let i = 0; i < items[key].length; i++) {
-            val = items[key][i];
-
-            if (val.name == name) {
                 return val.value;
             }
         }
     }
+    return "Value not found";
 }
 
 searchButton.onclick = handleSearch;
