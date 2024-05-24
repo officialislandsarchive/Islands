@@ -238,7 +238,6 @@ function updateJson(data) {
         }
     }
 }
-
 function fetchJson() {
 
     fetch(serverUrl)
