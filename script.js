@@ -121,135 +121,114 @@ let items = {
     { name: "Iron Ore", value: "15" },
     { name: "Iron", value: "20" }
 ],
-}
+};
 
-fetchJson()
+fetchJson();
 
 function openModal(category) {
-    modal.style.display = "block";
+  modal.style.display = "block";
+  let list = document.getElementById("modalItems");
+  list.innerHTML = "";
 
-    let list = document.getElementById("modalItems");
-    list.innerHTML = "";
+  items[category].forEach(item => {
+    let itemBox = document.createElement("div");
+    itemBox.classList.add("item-box");
 
-    items[category].forEach(function(item) {
-        var itemBox = document.createElement("div");
-        itemBox.classList.add("item-box");
+    let itemName = document.createElement("span");
+    itemName.classList.add("item-name");
+    itemName.textContent = item.name;
 
-        let itemName = document.createElement("span");
-        itemName.classList.add("item-name");
-        itemName.textContent = item.name;
+    let coinValue = document.createElement("span");
+    coinValue.classList.add("coin-value");
+    coinValue.textContent = "Coin Value: " + item.value;
 
-        let coinValue = document.createElement("span");
-        coinValue.classList.add("coin-value");
-        coinValue.textContent = "Coin Value: " + item.value;
+    itemBox.appendChild(itemName);
+    itemBox.appendChild(coinValue);
+    list.appendChild(itemBox);
+  });
 
-        itemBox.appendChild(itemName);
-        itemBox.appendChild(coinValue);
-        list.appendChild(itemBox);
-    });
-
-    document.getElementById("modalTitle").textContent = category.charAt(0).toUpperCase() + category.slice(1);
+  document.getElementById("modalTitle").textContent = category.charAt(0).toUpperCase() + category.slice(1);
 }
 
 function closeModal() {
-    modal.style.display = "none";
+  modal.style.display = "none";
 }
 
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 function handleSearch() {
-    let keyword = searchEntry.value.toLowerCase();
-    let results = [];
+  let keyword = searchEntry.value.toLowerCase();
+  let results = [];
 
-    for (let key in items) {
-        items[key].forEach(function(x) {
-            x = x.name
-    
-            if (x.toLowerCase().includes(keyword)) {
-                results.push({name: x, value: "5"});
-            }
-        })
-    }
+  for (let key in items) {
+    items[key].forEach(x => {
+      if (x.name.toLowerCase().includes(keyword)) {
+        results.push({ name: x.name, value: x.value });
+      }
+    });
+  }
 
-    openModelFromArray(results);
-    console.log(results);
+  openModelFromArray(results);
+  console.log(results);
 }
 
 function openModelFromArray(array) {
+  modal.style.display = "block";
+  let list = document.getElementById("modalItems");
+  list.innerHTML = "";
 
-    modal.style.display = "block";
+  array.forEach(item => {
+    let itemBox = document.createElement("div");
+    itemBox.classList.add("item-box");
 
-    let list = document.getElementById("modalItems");
-    list.innerHTML = "";
+    let itemName = document.createElement("span");
+    itemName.classList.add("item-name");
+    itemName.textContent = item.name;
 
-    array.forEach(function(item) {
-        let itemBox = document.createElement("div");
-        itemBox.classList.add("item-box");
-    
-        let itemName = document.createElement("span");
-        itemName.classList.add("item-name");
-        itemName.textContent = item.name;
-    
-        let coinValue = document.createElement("span");
-        coinValue.classList.add("coin-value");
-        coinValue.textContent = "Coin Value: " + getCoinValue(item.name);
-    
-        itemBox.appendChild(itemName);
-        itemBox.appendChild(coinValue);
-        list.appendChild(itemBox);
-    })
+    let coinValue = document.createElement("span");
+    coinValue.classList.add("coin-value");
+    coinValue.textContent = "Coin Value: " + getCoinValue(item.name);
 
-    document.getElementById("modalTitle").textContent = "Results";
+    itemBox.appendChild(itemName);
+    itemBox.appendChild(coinValue);
+    list.appendChild(itemBox);
+  });
+
+  document.getElementById("modalTitle").textContent = "Results";
 }
 
 function getCoinValue(name) {
-    for (let key in items) {
-
-        items[key].forEach(function(val) {
-            if (val.name.toLowerCase() == name.toLowerCase()) {
-
-                return val.value;
-            }
-        })
-
-        for (let i = 0; i < items[key].length; i++) {
-            val = items[key][i];
-
-            if (val.name == name) {
-                return val.value;
-            }
-        }
+  for (let key in items) {
+    for (let i = 0; i < items[key].length; i++) {
+      if (items[key][i].name.toLowerCase() === name.toLowerCase()) {
+        return items[key][i].value;
+      }
     }
+  }
 }
 
-searchButton.onclick = handleSearch
+searchButton.onclick = handleSearch;
 
 function updateJson(data) {
-  console.log(data)
-
-    for (let key in items) {
-        for (let key2 in items[key]) {
-            let priceVal = data[items[key][key2].name.replace(/-/g, ' ')]
-            console.log(items[key][key2].value = priceVal)
-        }
-    }
+  for (let key in items) {
+    items[key].forEach(item => {
+      let priceVal = data[item.name.replace(/ /g, '-')];
+      item.value = priceVal ? priceVal : item.value;
+    });
+  }
 }
 
 function fetchJson() {
-
-    fetch(serverUrl)
-    .then(response => response.text())
+  fetch(serverUrl)
+    .then(response => response.json())
     .then(data => {
-        let Jsondata = JSON.parse(data)
-        updateJson(Jsondata)
-        console.log(Jsondata)
+      updateJson(data.priceData);
     })
     .catch(error => {
- 
-        console.log('Error:', error);
+      console.error('Error fetching data:', error);
     });
 }
