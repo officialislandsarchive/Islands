@@ -2,7 +2,7 @@ let modal = document.getElementById('myModal');
 let searchButton = document.getElementById("search");
 let searchEntry = document.getElementById("searchInput");
 
-const serverUrl = 'https://7b90e0d8-713d-4ab4-aff4-1beccc564626-00-lrgns0w528ny.riker.replit.dev/';
+const serverUrl = 'https://2eb9302c-4d6d-41ee-9d3c-c41c4773de69-00-30f0yl61alvh2.kirk.replit.dev:3003/';
 
 let items = {
 "crops": [
