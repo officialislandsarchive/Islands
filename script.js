@@ -120,37 +120,109 @@ let items = {
     { name: "Coal", value: "10" },
     { name: "Iron Ore", value: "15" },
     { name: "Iron", value: "20" }
-],
-};
+],};
 
 fetchJson();
 
 function openModal(category) {
-    // Function remains the same
+    modal.style.display = "block";
+
+    let list = document.getElementById("modalItems");
+    list.innerHTML = "";
+
+    items[category].forEach(function(item) {
+        var itemBox = document.createElement("div");
+        itemBox.classList.add("item-box");
+
+        let itemName = document.createElement("span");
+        itemName.classList.add("item-name");
+        itemName.textContent = item.name;
+
+        let coinValue = document.createElement("span");
+        coinValue.classList.add("coin-value");
+        coinValue.textContent = "Coin Value: " + item.value;
+
+        itemBox.appendChild(itemName);
+        itemBox.appendChild(coinValue);
+        list.appendChild(itemBox);
+    });
+
+    document.getElementById("modalTitle").textContent = category.charAt(0).toUpperCase() + category.slice(1);
 }
 
 function closeModal() {
-    // Function remains the same
+    modal.style.display = "none";
 }
 
 window.onclick = function(event) {
-    // Function remains the same
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 };
 
 function handleSearch() {
-    // Function remains the same
+    let keyword = searchEntry.value.toLowerCase();
+    let results = [];
+
+    for (let key in items) {
+        items[key].forEach(function(x) {
+            x = x.name
+    
+            if (x.toLowerCase().includes(keyword)) {
+                results.push({name: x, value: "5"});
+            }
+        })
+    }
+
+    openModelFromArray(results);
+    console.log(results);
 }
 
 function openModelFromArray(array) {
-    // Function remains the same
+
+    modal.style.display = "block";
+
+    let list = document.getElementById("modalItems");
+    list.innerHTML = "";
+
+    array.forEach(function(item) {
+        let itemBox = document.createElement("div");
+        itemBox.classList.add("item-box");
+    
+        let itemName = document.createElement("span");
+        itemName.classList.add("item-name");
+        itemName.textContent = item.name;
+    
+        let coinValue = document.createElement("span");
+        coinValue.classList.add("coin-value");
+        coinValue.textContent = "Coin Value: " + getCoinValue(item.name);
+    
+        itemBox.appendChild(itemName);
+        itemBox.appendChild(coinValue);
+        list.appendChild(itemBox);
+    })
+
+    document.getElementById("modalTitle").textContent = "Results";
 }
 
-function getCoinValue(data, name) {
-    let formattedName = name.replace(/-/g, ' ').toLowerCase();
-    if (data.hasOwnProperty(formattedName)) {
-        return data[formattedName];
+function getCoinValue(name) {
+    for (let key in items) {
+
+        items[key].forEach(function(val) {
+            if (val.name.toLowerCase() == name.toLowerCase()) {
+
+                return val.value;
+            }
+        })
+
+        for (let i = 0; i < items[key].length; i++) {
+            val = items[key][i];
+
+            if (val.name == name) {
+                return val.value;
+            }
+        }
     }
-    return null;
 }
 
 searchButton.onclick = handleSearch;
@@ -179,3 +251,11 @@ function fetchJson() {
             console.log('Error:', error);
         });
 }
+
+// Add event listeners to open modals
+document.querySelectorAll('.open-modal').forEach(item => {
+    item.addEventListener('click', event => {
+        let category = event.target.dataset.category;
+        openModal(category);
+    });
+});
