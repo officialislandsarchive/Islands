@@ -2,7 +2,7 @@ let modal = document.getElementById('myModal');
 let searchButton = document.getElementById("search");
 let searchEntry = document.getElementById("searchInput");
 
-const serverUrl = '';
+const serverUrl = 'https://7b90e0d8-713d-4ab4-aff4-1beccc564626-00-lrgns0w528ny.riker.replit.dev/';
 
 let items = {
 "crops": [
@@ -121,10 +121,9 @@ let items = {
     { name: "Iron Ore", value: "15" },
     { name: "Iron", value: "20" }
 ],
+}
 
-};
-
-fetchJson();
+fetchJson()
 
 function openModal(category) {
     modal.style.display = "block";
@@ -176,11 +175,11 @@ function handleSearch() {
         })
     }
 
-    openModalFromArray(results);
+    openModelFromArray(results);
     console.log(results);
 }
 
-function openModalFromArray(array) {
+function openModelFromArray(array) {
 
     modal.style.display = "block";
 
@@ -209,25 +208,33 @@ function openModalFromArray(array) {
 
 function getCoinValue(name) {
     for (let key in items) {
-        for (let val of items[key]) {
-            if (val.name.toLowerCase() === name.toLowerCase()) {
+
+        items[key].forEach(function(val) {
+            if (val.name.toLowerCase() == name.toLowerCase()) {
+
+                return val.value;
+            }
+        })
+
+        for (let i = 0; i < items[key].length; i++) {
+            val = items[key][i];
+
+            if (val.name == name) {
                 return val.value;
             }
         }
     }
-    // If the item is not found, you can return a default value or handle it accordingly
-    return "N/A"; // Or any other default value you prefer
 }
 
-searchButton.onclick = handleSearch;
+searchButton.onclick = handleSearch
 
 function updateJson(data) {
-    console.log(data);
+  console.log(data)
 
     for (let key in items) {
         for (let key2 in items[key]) {
-            let priceVal = data[items[key][key2].name.replace(/-/g, ' ')];
-            console.log(items[key][key2].value = priceVal);
+            let priceVal = data[items[key][key2].name.replace(/-/g, ' ')]
+            console.log(items[key][key2].value = priceVal)
         }
     }
 }
@@ -237,9 +244,9 @@ function fetchJson() {
     fetch(serverUrl)
     .then(response => response.text())
     .then(data => {
-        let jsonData = JSON.parse(data);
-        updateJson(jsonData);
-        console.log(jsonData);
+        let Jsondata = JSON.parse(data)
+        updateJson(Jsondata)
+        console.log(Jsondata)
     })
     .catch(error => {
         // Log any errors
