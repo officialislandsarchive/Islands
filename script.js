@@ -121,9 +121,10 @@ let items = {
     { name: "Iron Ore", value: "15" },
     { name: "Iron", value: "20" }
 ],
-}
 
-fetchJson()
+};
+
+fetchJson();
 
 function openModal(category) {
     modal.style.display = "block";
@@ -175,11 +176,11 @@ function handleSearch() {
         })
     }
 
-    openModelFromArray(results);
+    openModalFromArray(results);
     console.log(results);
 }
 
-function openModelFromArray(array) {
+function openModalFromArray(array) {
 
     modal.style.display = "block";
 
@@ -208,33 +209,25 @@ function openModelFromArray(array) {
 
 function getCoinValue(name) {
     for (let key in items) {
-
-        items[key].forEach(function(val) {
-            if (val.name.toLowerCase() == name.toLowerCase()) {
-
-                return val.value;
-            }
-        })
-
-        for (let i = 0; i < items[key].length; i++) {
-            val = items[key][i];
-
-            if (val.name == name) {
+        for (let val of items[key]) {
+            if (val.name.toLowerCase() === name.toLowerCase()) {
                 return val.value;
             }
         }
     }
+    // If the item is not found, you can return a default value or handle it accordingly
+    return "N/A"; // Or any other default value you prefer
 }
 
-searchButton.onclick = handleSearch
+searchButton.onclick = handleSearch;
 
 function updateJson(data) {
-  console.log(data)
+    console.log(data);
 
     for (let key in items) {
         for (let key2 in items[key]) {
-            let priceVal = data[items[key][key2].name.replace(/-/g, ' ')]
-            console.log(items[key][key2].value = priceVal)
+            let priceVal = data[items[key][key2].name.replace(/-/g, ' ')];
+            console.log(items[key][key2].value = priceVal);
         }
     }
 }
@@ -244,9 +237,9 @@ function fetchJson() {
     fetch(serverUrl)
     .then(response => response.text())
     .then(data => {
-        let Jsondata = JSON.parse(data)
-        updateJson(Jsondata)
-        console.log(Jsondata)
+        let jsonData = JSON.parse(data);
+        updateJson(jsonData);
+        console.log(jsonData);
     })
     .catch(error => {
         // Log any errors
