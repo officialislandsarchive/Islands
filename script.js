@@ -249,7 +249,7 @@ function fetchJson() {
         console.log(Jsondata)
     })
     .catch(error => {
-        // Log any errors
+ 
         console.log('Error:', error);
     });
 }
