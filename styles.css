@@ -62,7 +62,9 @@ body {
 }
 
 .discord-btn {
-    position: relative;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
 
 .discord-btn .btn {
