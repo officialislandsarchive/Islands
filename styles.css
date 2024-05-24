@@ -62,9 +62,7 @@ body {
 }
 
 .discord-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: relative;
 }
 
 .discord-btn .btn {
@@ -72,6 +70,14 @@ body {
     font-size: 16px;
     border-radius: 10px;
     background-color: #7289da;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.discord-btn .btn:hover {
+    background-color: transparent;
+    color: #7289da;
+    border-color: #7289da;
 }
 
 .search-container-right {
