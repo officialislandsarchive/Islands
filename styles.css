@@ -24,7 +24,7 @@ body {
 .title {
     font-size: 36px;
     font-weight: bold;
-    background: linear-gradient(to right, #ff8a00, #e52e71);
+    background: linear-gradient(to right, #00ff00, #008000);
     -webkit-background-clip: text;
     color: transparent;
     animation: glow 1s ease-in-out infinite alternate;
@@ -32,10 +32,10 @@ body {
 
 @keyframes glow {
     from {
-        text-shadow: 0 0 10px #ff8a00, 0 0 20px #ff8a00, 0 0 30px #ff8a00, 0 0 40px #e52e71, 0 0 50px #e52e71, 0 0 60px #e52e71, 0 0 70px #e52e71;
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #008000, 0 0 50px #008000, 0 0 60px #008000, 0 0 70px #008000;
     }
     to {
-        text-shadow: 0 0 20px #ff8a00, 0 0 30px #ff8a00, 0 0 40px #ff8a00, 0 0 50px #e52e71, 0 0 60px #e52e71, 0 0 70px #e52e71, 0 0 80px #e52e71;
+        text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #008000, 0 0 60px #008000, 0 0 70px #008000, 0 0 80px #008000;
     }
 }
 
@@ -46,7 +46,7 @@ body {
 
 .btn {
     padding: 10px 20px;
-    background: linear-gradient(to right, #ff8a00, #e52e71);
+    background: linear-gradient(to right, #00ff00, #008000);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -80,7 +80,7 @@ body {
 
 .search-btn {
     padding: 10px 20px;
-    background: linear-gradient(to right, #ff8a00, #e52e71);
+    background: linear-gradient(to right, #00ff00, #008000);
     color: white;
     border: none;
     border-radius: 30px;
@@ -140,7 +140,7 @@ body {
 
 .close:hover,
 .close:focus {
-    color: #ff8a00;
+    color: #00ff00;
     text-decoration: none;
 }
 
@@ -168,13 +168,13 @@ body {
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 10px;
-    color: #ff8a00;
+    color: #00ff00;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .coin-value {
-    color: #e52e71;
+    color: #008000;
     font-size: 20px;
     margin-top: 10px;
     margin-left: 4;
@@ -186,7 +186,7 @@ body {
 
 .coin-value:before {
     content: "Coin Value: ";
-    color: #ff8a00;
+    color: #00ff00;
     font-weight: bold;
 }
 
@@ -200,14 +200,14 @@ body {
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
-    background-color: #7289da;
+    background-color: #00ff00;
     transition: all 0.3s ease-in-out;
     border: none;
     cursor: pointer;
 }
 
 .discord-btn .btn:hover {
-    background-color: #5f73a1;
+    background-color: #008000;
 }
 
 .price-update {
@@ -215,18 +215,17 @@ body {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-}
-
-.price-update .btn {
+    backdrop-filter: blur(10px); /* Blurs the background behind the button */
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
-    background-color: #7289da;
-    transition: all 0.3s ease-in-out;
-    border: none;
+    background-color: rgba(0, 255, 0, 0.3); /* Semi-transparent green */
+    border: 2px solid #00ff00;
+    color: #fff;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-.price-update .btn:hover {
-    background-color: #5f73a1;
+.price-update:hover {
+    background-color: rgba(0, 255, 0, 0.5); /* Darker semi-transparent green on hover */
 }
