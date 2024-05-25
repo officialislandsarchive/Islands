@@ -226,6 +226,11 @@ body {
     cursor: pointer;
 }
 
+.price-update-btn .btn:hover {
+    background-color: #5f73a1;
+}
+
+
 .price-update .btn:hover {
     background-color: #5f73a1;
 }
