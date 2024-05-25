@@ -241,16 +241,16 @@ body {
     backdrop-filter: blur(10px);
     padding: 12px 24px;
     font-size: 16px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0.1));
-    border: 2px solid #00ff00;
+    border-radius: 30px; /* Making it more consistent with other buttons */
+    background: linear-gradient(to right, #00ff00, #008000); /* Matching other buttons */
+    border: none;
     color: #fff;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
 
 .price-update:hover {
-    background: linear-gradient(135deg, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0.3));
+    background: linear-gradient(to right, #008000, #00ff00); /* Matching hover effect with other buttons */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
