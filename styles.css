@@ -6,25 +6,26 @@
 }
 
 body {
-    background: linear-gradient(to right, #1c1c1c, #2b2b2b);
+    background: radial-gradient(circle, #ff00ff, #800080, #0000ff);
     color: #fff;
     font-size: 16px;
     line-height: 1.6;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: #444;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background: linear-gradient(to right, #ff00ff, #800080, #0000ff);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .title {
-    font-size: 36px;
+    font-size: 48px;
     font-weight: bold;
-    background: linear-gradient(to right, #00ff00, #008000);
+    background: linear-gradient(to right, #00ff00, #ff0000);
     -webkit-background-clip: text;
     color: transparent;
     animation: glow 1s ease-in-out infinite alternate;
@@ -32,10 +33,10 @@ body {
 
 @keyframes glow {
     from {
-        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #008000, 0 0 50px #008000, 0 0 60px #008000, 0 0 70px #008000;
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
     }
     to {
-        text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #008000, 0 0 60px #008000, 0 0 70px #008000, 0 0 80px #008000;
+        text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000, 0 0 80px #ff0000;
     }
 }
 
@@ -46,18 +47,18 @@ body {
 
 .btn {
     padding: 10px 20px;
-    background: linear-gradient(to right, #00ff00, #008000);
+    background: linear-gradient(to right, #00ff00, #ff0000);
     color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
 }
 
 .search-container {
@@ -72,6 +73,7 @@ body {
     border: none;
     width: 200px;
     transition: width 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .search-bar:focus {
@@ -80,18 +82,18 @@ body {
 
 .search-btn {
     padding: 10px 20px;
-    background: linear-gradient(to right, #00ff00, #008000);
+    background: linear-gradient(to right, #00ff00, #ff0000);
     color: white;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease-in-out;
 }
 
 .search-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
 }
 
 .modal {
@@ -108,10 +110,10 @@ body {
 }
 
 .modal-content {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.5);
     margin: 10% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #fff;
     width: 80%;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -140,24 +142,25 @@ body {
 
 .close:hover,
 .close:focus {
-    color: #00ff00;
+    color: #ff0000;
     text-decoration: none;
 }
 
 .item-box {
     position: relative;
-    background-color: #1f1f1f;
-    border: 2px solid #444;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #fff;
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
     transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    overflow: hidden;
 }
 
 .item-box:hover {
     transform: translateY(-5px);
-    background: #121212;
+    background: rgba(0, 0, 0, 0.9);
 }
 
 .item-details {
@@ -169,7 +172,7 @@ body {
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 10px;
-    color: #00ff00;
+    color: #ff00ff;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -177,14 +180,14 @@ body {
 .coin-value {
     position: absolute;
     top: 10px;
-    left: calc(100% + 10px); /* Positioned relative to the right side of the item-box */
-    color: #00ff00;
+    right: 10px;
+    color: #ff00ff;
     font-size: 20px;
     padding: 5px 15px;
     border-radius: 15px;
-    background-color: rgba(0, 255, 0, 0.2);
+    background-color: rgba(255, 0, 255, 0.5);
     backdrop-filter: blur(5px);
-    box-shadow: 0 4px 6px rgba(0, 255, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(255, 0, 255, 0.7);
     transition: all 0.3s ease-in-out;
     transform: scale(0.8);
     opacity: 0;
@@ -200,7 +203,6 @@ body {
     font-weight: bold;
 }
 
-/* Add cool hover effects to the item-box */
 .item-box:before {
     content: "";
     position: absolute;
@@ -208,7 +210,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1);
+    background: radial-gradient(circle, #ff00ff, #800080, #0000ff);
     transition: all 0.5s ease-in-out;
     z-index: -1;
     pointer-events: none;
