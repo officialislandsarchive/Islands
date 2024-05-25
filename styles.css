@@ -215,7 +215,6 @@ body {
     z-index: -1;
     pointer-events: none;
 }
-
 .item-box:hover:before {
     top: 0;
     left: 0;
