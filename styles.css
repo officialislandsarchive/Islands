@@ -24,7 +24,7 @@ body {
 .title {
     font-size: 36px;
     font-weight: bold;
-    background: linear-gradient(to right, #00ff00, #008000);
+    background: linear-gradient(to right, #ff8a00, #e52e71);
     -webkit-background-clip: text;
     color: transparent;
     animation: glow 1s ease-in-out infinite alternate;
@@ -32,10 +32,10 @@ body {
 
 @keyframes glow {
     from {
-        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #008000, 0 0 50px #008000, 0 0 60px #008000, 0 0 70px #008000;
+        text-shadow: 0 0 10px #ff8a00, 0 0 20px #ff8a00, 0 0 30px #ff8a00, 0 0 40px #e52e71, 0 0 50px #e52e71, 0 0 60px #e52e71, 0 0 70px #e52e71;
     }
     to {
-        text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #008000, 0 0 60px #008000, 0 0 70px #008000, 0 0 80px #008000;
+        text-shadow: 0 0 20px #ff8a00, 0 0 30px #ff8a00, 0 0 40px #ff8a00, 0 0 50px #e52e71, 0 0 60px #e52e71, 0 0 70px #e52e71, 0 0 80px #e52e71;
     }
 }
 
@@ -46,7 +46,7 @@ body {
 
 .btn {
     padding: 10px 20px;
-    background: linear-gradient(to right, #00ff00, #008000);
+    background: linear-gradient(to right, #ff8a00, #e52e71);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -80,7 +80,7 @@ body {
 
 .search-btn {
     padding: 10px 20px;
-    background: linear-gradient(to right, #00ff00, #008000);
+    background: linear-gradient(to right, #ff8a00, #e52e71);
     color: white;
     border: none;
     border-radius: 30px;
@@ -140,77 +140,54 @@ body {
 
 .close:hover,
 .close:focus {
-    color: #00ff00;
+    color: #ff8a00;
     text-decoration: none;
 }
 
 .item-box {
-    background: linear-gradient(135deg, #333, #111);
+    background-color: #1f1f1f;
     border: 2px solid #444;
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
 .item-box:hover {
-    transform: translateY(-5px) rotate(2deg) scale(1.05);
-    background: linear-gradient(135deg, #444, #222);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-}
-
-.item-box:hover::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: rgba(0, 255, 0, 0.1);
-    filter: blur(50px);
-    z-index: 0;
-    transition: all 0.5s ease-in-out;
+    transform: translateY(-5px);
+    background: #121212;
 }
 
 .item-details {
     display: flex;
     flex-direction: column;
-    z-index: 1;
 }
 
 .item-name {
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 10px;
-    color: #00ff00;
+    color: #ff8a00;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .coin-value {
-    color: #008000;
+    color: #e52e71;
     font-size: 20px;
     margin-top: 10px;
+    margin-left: 4;
     padding: 5px 15px;
     border-radius: 15px;
     background-color: #333;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    z-index: 1;
 }
 
 .coin-value:before {
     content: "Coin Value: ";
-    color: #00ff00;
+    color: #ff8a00;
     font-weight: bold;
-    margin-right: 5px;
 }
 
 .discord-btn {
@@ -223,14 +200,14 @@ body {
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
-    background-color: #00ff00;
+    background-color: #7289da;
     transition: all 0.3s ease-in-out;
     border: none;
     cursor: pointer;
 }
 
 .discord-btn .btn:hover {
-    background-color: #008000;
+    background-color: #5f73a1;
 }
 
 .price-update {
@@ -238,19 +215,18 @@ body {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 30px; /* Making it more consistent with other buttons */
-    background: linear-gradient(to right, #00ff00, #008000); /* Matching other buttons */
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
 }
 
-.price-update:hover {
-    background: linear-gradient(to right, #008000, #00ff00); /* Matching hover effect with other buttons */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+.price-update .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #7289da;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.price-update .btn:hover {
+    background-color: #5f73a1;
 }
