@@ -213,7 +213,7 @@ body {
 .price-update {
     position: fixed;
     bottom: 20px;
-    right: 20px; 
+    left: 20px;
 }
 
 .price-update .btn {
@@ -225,11 +225,6 @@ body {
     border: none;
     cursor: pointer;
 }
-
-.price-update-btn .btn:hover {
-    background-color: #5f73a1;
-}
-
 
 .price-update .btn:hover {
     background-color: #5f73a1;
