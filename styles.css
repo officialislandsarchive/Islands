@@ -152,6 +152,9 @@ body {
     margin-bottom: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    display: flex; /* Added flex display */
+    justify-content: space-between; /* Distribute space between children */
+    align-items: center; /* Align items vertically */
 }
 
 .item-box:hover {
@@ -177,17 +180,19 @@ body {
     color: #008000;
     font-size: 20px;
     margin-top: 10px;
-    margin-left: 4;
     padding: 5px 15px;
     border-radius: 15px;
     background-color: #333;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex; /* Align text and content within */
+    align-items: center; /* Center content vertically */
 }
 
 .coin-value:before {
     content: "Coin Value: ";
     color: #00ff00;
     font-weight: bold;
+    margin-right: 5px; /* Space between text and coin value */
 }
 
 .discord-btn {
