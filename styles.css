@@ -215,18 +215,17 @@ body {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-}
-
-.price-update .btn {
+    backdrop-filter: blur(10px); /* Blurs the background behind the button */
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
-    background-color: #00ff00;
-    transition: all 0.3s ease-in-out;
-    border: none;
+    background-color: rgba(0, 255, 0, 0.3); /* Semi-transparent green */
+    border: 2px solid #00ff00;
+    color: #fff;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-.price-update .btn:hover {
-    background-color: #008000;
+.price-update:hover {
+    background-color: rgba(0, 255, 0, 0.5); /* Darker semi-transparent green on hover */
 }
