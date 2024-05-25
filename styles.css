@@ -192,16 +192,14 @@ body {
     font-weight: bold;
 }
 
-/* Page buttons styles */
-.page-buttons {
+/* Discord button style */
+.discord-btn {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    display: flex;
-    gap: 10px;
 }
 
-.page-buttons .btn {
+.discord-btn .btn {
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
@@ -211,6 +209,29 @@ body {
     cursor: pointer;
 }
 
-.page-buttons .btn:hover {
+/* Hover effect for Discord button */
+.discord-btn .btn:hover {
+    background-color: #5f73a1;
+}
+
+/* Price Update button style */
+.price-update {
+    position: fixed;
+    bottom: 20px;
+    left: 160px; /* Adjust position as needed */
+}
+
+.price-update .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #7289da;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hover effect for Price Update button */
+.price-update .btn:hover {
     background-color: #5f73a1;
 }
