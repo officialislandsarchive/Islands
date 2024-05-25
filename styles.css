@@ -145,26 +145,43 @@ body {
 }
 
 .item-box {
-    background-color: #1f1f1f;
+    background: linear-gradient(135deg, #333, #111);
     border: 2px solid #444;
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-    display: flex; /* Added flex display */
-    justify-content: space-between; /* Distribute space between children */
-    align-items: center; /* Align items vertically */
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
 .item-box:hover {
-    transform: translateY(-5px);
-    background: #121212;
+    transform: translateY(-5px) rotate(2deg) scale(1.05);
+    background: linear-gradient(135deg, #444, #222);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.item-box:hover::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 255, 0, 0.1);
+    filter: blur(50px);
+    z-index: 0;
+    transition: all 0.5s ease-in-out;
 }
 
 .item-details {
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 .item-name {
@@ -184,15 +201,16 @@ body {
     border-radius: 15px;
     background-color: #333;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    display: flex; /* Align text and content within */
-    align-items: center; /* Center content vertically */
+    display: flex;
+    align-items: center;
+    z-index: 1;
 }
 
 .coin-value:before {
     content: "Coin Value: ";
     color: #00ff00;
     font-weight: bold;
-    margin-right: 5px; /* Space between text and coin value */
+    margin-right: 5px;
 }
 
 .discord-btn {
@@ -220,17 +238,19 @@ body {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    backdrop-filter: blur(10px); /* Blurs the background behind the button */
+    backdrop-filter: blur(10px);
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
-    background-color: rgba(0, 255, 0, 0.3); /* Semi-transparent green */
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0.1));
     border: 2px solid #00ff00;
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .price-update:hover {
-    background-color: rgba(0, 255, 0, 0.5); /* Darker semi-transparent green on hover */
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0.3));
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
