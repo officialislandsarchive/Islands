@@ -10,21 +10,6 @@ body {
     color: #fff;
     font-size: 16px;
     line-height: 1.6;
-    background: linear-gradient(to right, #ff00ff, #00ff00, #0000ff, #ff00ff);
-    background-size: 400% 400%;
-    animation: rainbow 10s ease infinite;
-}
-
-@keyframes rainbow {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 .header {
@@ -34,7 +19,6 @@ body {
     padding: 20px 50px;
     background: #444;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: pulse 2s alternate infinite;
 }
 
 .title {
@@ -43,17 +27,16 @@ body {
     background: linear-gradient(to right, #00ff00, #008000);
     -webkit-background-clip: text;
     color: transparent;
-    animation: rotate 8s linear infinite;
+    animation: glow 1s ease-in-out infinite alternate;
 }
 
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes pulse {
-    0% { background-color: #444; }
-    100% { background-color: #00ffff; }
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #008000, 0 0 50px #008000, 0 0 60px #008000, 0 0 70px #008000;
+    }
+    to {
+        text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #008000, 0 0 60px #008000, 0 0 70px #008000, 0 0 80px #008000;
+    }
 }
 
 .buttons-container {
@@ -174,7 +157,7 @@ body {
 }
 
 .item-box:hover {
-    transform: rotate(10deg) scale(1.05);
+    transform: translateY(-5px);
     background: #121212;
 }
 
@@ -195,23 +178,18 @@ body {
 .coin-value {
     position: absolute;
     top: 10px;
-    left: 10px;
-    color: #00ff00;
+    right: 10px;
+    color: #fff;
     font-size: 20px;
     padding: 5px 15px;
     border-radius: 15px;
-    background-color: rgba(0, 255, 0, 0.2);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 4px 6px rgba(0, 255, 0, 0.3);
+    background-color: #00ff00;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
     z-index: 1;
-    transform: scale(0.8);
-    opacity: 0;
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00, 0 0 70px #00ff00;
 }
 
 .item-box:hover .coin-value {
-    transform: scale(1);
     opacity: 1;
 }
 
