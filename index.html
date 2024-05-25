@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official Islands Archive Price Guide</title>
+    <title>Islands Inventory Catalog</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
 <div class="header">
-    <div class="title">Official Price Guide</div>
+    <div class="title">Islands Inventory Catalog</div>
     
     <div class="buttons-container">
         <button class="btn" onclick="openModal('crops')">Crops</button>
@@ -30,23 +30,22 @@
     
     <div class="search-container">
         <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
-        <button id="search" class="search-btn">Search</button>
+        <button class="search-btn" onclick="searchItems()">Search</button>
     </div>
 </div>
 
-<div class="price-update">
-    <a href="https://officialislandsarchive.github.io/PriceUpdate/" class="btn" target="_blank">Help Update Prices Here!</a>
+
+<div class="price-update" onclick="window.location.href='https://officialislandsarchive.github.io/PriceUpdate/'">
+    Help Update Prices Here!
 </div>
 
-<div id="myModal" class="modal">
+<div id="modal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h2 id="modalTitle"></h2>
-        <div id="modalItems"></div>
+        <p>Modal Content</p>
     </div>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
