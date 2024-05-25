@@ -63,38 +63,44 @@ body {
 
 /* Discord button positioned relative to the header */
 .discord-btn {
-    position: relative;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
-/* Discord button at the bottom right corner */
+/* Discord button style */
 .discord-btn .btn {
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
     background-color: #7289da;
     transition: all 0.3s ease-in-out;
-    border: 2px solid transparent;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+    border: none;
+    cursor: pointer;
 }
 
 /* Hover effect for Discord button */
 .discord-btn .btn:hover {
-    background-color: transparent;
-    color: #7289da;
-    border-color: #7289da;
+    background-color: #5f73a1;
 }
 
-/* Styling for Price Update button */
-.buttons-container .btn {
+/* Price Update button style */
+.price-update {
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
     background-color: #7289da;
     transition: all 0.3s ease-in-out;
-    border: 2px solid transparent;
-    margin-right: 10px; /* Add spacing between Price Update and Discord button */
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 160px; /* Adjust as needed to position it correctly */
+}
+
+/* Hover effect for Price Update button */
+.price-update:hover {
+    background-color: #5f73a1;
 }
 
 .search-container-right {
