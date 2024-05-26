@@ -1,4 +1,5 @@
 let modal = document.getElementById('myModal');
+let creditsModal = document.getElementById('creditsModal');
 let searchButton = document.getElementById("search");
 let searchEntry = document.getElementById("searchInput");
 
@@ -123,8 +124,7 @@ let items = {
         { name: "Iron", value: "75" }
     ],
 }
-
-fetchJson()
+fetchJson();
 
 function openModal(category) {
     modal.style.display = "block";
@@ -254,3 +254,52 @@ function fetchJson() {
         console.log('Error:', error);
     });
 }
+
+// Adding Credits Functionality
+function showCredits() {
+    let creditsModal = document.getElementById("creditsModal");
+    creditsModal.style.display = "block";
+
+    let creditsList = document.getElementById("creditsList");
+    creditsList.innerHTML = "";
+
+    let credits = [
+        "dawginator4000 | Game Developer",
+        "PartlyScientific | Community Server Founder",
+        "riskyworld | Community Server Founder",
+        "Xx_Gamer462 | Website Manager/Developer"
+    ];
+
+    credits.forEach(credit => {
+        let creditItem = document.createElement("div");
+        creditItem.classList.add("credit-item");
+
+        let [name, role, imageUrl] = credit.split(" | ");
+        
+        let creditName = document.createElement("span");
+        creditName.textContent = name;
+        
+        let creditRole = document.createElement("span");
+        creditRole.textContent = role;
+
+        let creditImage = document.createElement("img");
+        creditImage.src = imageUrl;
+        creditImage.alt = name;
+
+        creditItem.appendChild(creditImage);
+        creditItem.appendChild(creditName);
+        creditItem.appendChild(creditRole);
+
+        creditsList.appendChild(creditItem);
+    });
+}
+
+// Close Credits Modal
+function closeCreditsModal() {
+    let creditsModal = document.getElementById("creditsModal");
+    creditsModal.style.display = "none";
+}
+
+// Triggering Credits Modal
+document.getElementById("creditsBtn").addEventListener("click", showCredits);
+document.getElementById("creditsCloseBtn").addEventListener("click", closeCreditsModal);
