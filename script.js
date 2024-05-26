@@ -1,4 +1,5 @@
 let modal = document.getElementById('myModal');
+let creditsModal = document.getElementById('creditsModal');
 let searchButton = document.getElementById("search");
 let searchEntry = document.getElementById("searchInput");
 
@@ -127,38 +128,42 @@ let items = {
 fetchJson()
 
 function openModal(category) {
-    modal.style.display = "block";
+    if (category === 'credits') {
+        creditsModal.style.display = "block";
+    } else {
+        modal.style.display = "block";
+        let list = document.getElementById("modalItems");
+        list.innerHTML = "";
 
-    let list = document.getElementById("modalItems");
-    list.innerHTML = "";
+        items[category].forEach(function(item) {
+            var itemBox = document.createElement("div");
+            itemBox.classList.add("item-box");
 
-    items[category].forEach(function(item) {
-        var itemBox = document.createElement("div");
-        itemBox.classList.add("item-box");
+            let itemName = document.createElement("span");
+            itemName.classList.add("item-name");
+            itemName.textContent = item.name;
 
-        let itemName = document.createElement("span");
-        itemName.classList.add("item-name");
-        itemName.textContent = item.name;
+            let coinValue = document.createElement("span");
+            coinValue.classList.add("coin-value");
+            coinValue.textContent = "Coin Value: " + item.value;
 
-        let coinValue = document.createElement("span");
-        coinValue.classList.add("coin-value");
-        coinValue.textContent = "Coin Value: " + item.value;
+            itemBox.appendChild(itemName);
+            itemBox.appendChild(coinValue);
+            list.appendChild(itemBox);
+        });
 
-        itemBox.appendChild(itemName);
-        itemBox.appendChild(coinValue);
-        list.appendChild(itemBox);
-    });
-
-    document.getElementById("modalTitle").textContent = category.charAt(0).toUpperCase() + category.slice(1);
+        document.getElementById("modalTitle").textContent = category.charAt(0).toUpperCase() + category.slice(1);
+    }
 }
 
-function closeModal() {
-    modal.style.display = "none";
+function closeModal(modalId = 'myModal') {
+    document.getElementById(modalId).style.display = 'none';
 }
 
 window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target == modal || event.target == creditsModal) {
         modal.style.display = "none";
+        creditsModal.style.display = "none";
     }
 }
 
@@ -181,7 +186,6 @@ function handleSearch() {
 }
 
 function openModelFromArray(array) {
-
     modal.style.display = "block";
 
     let list = document.getElementById("modalItems");
@@ -209,17 +213,14 @@ function openModelFromArray(array) {
 
 function getCoinValue(name) {
     for (let key in items) {
-
         items[key].forEach(function(val) {
             if (val.name.toLowerCase() == name.toLowerCase()) {
-
                 return val.value;
             }
         })
 
         for (let i = 0; i < items[key].length; i++) {
             val = items[key][i];
-
             if (val.name == name) {
                 return val.value;
             }
@@ -231,7 +232,6 @@ searchButton.onclick = handleSearch
 
 function updateJson(data) {
   console.log(data)
-
     for (let key in items) {
         for (let key2 in items[key]) {
             let priceVal = data[items[key][key2].name]
@@ -241,7 +241,6 @@ function updateJson(data) {
 }
 
 function fetchJson() {
-
     fetch(serverUrl)
     .then(response => response.text())
     .then(data => {
