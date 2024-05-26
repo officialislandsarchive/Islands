@@ -1,3 +1,36 @@
+document.querySelector('.credits-btn .btn').addEventListener('click', function() {
+    const members = [
+        {
+            name: "dawginator4000",
+            title: "Game Developer",
+            description: "The mastermind behind our immersive game experiences.",
+            image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459480902893568/noFilter.png?ex=6654d2bd&is=6653813d&hm=7bfe898697c99da6f8c200e62343b164c4985b7a62ef180fad4d19462f7006bd&"
+        },
+        {
+            name: "PartlyScientific",
+            title: "Community Server Founder",
+            description: "A visionary leader who brought our community together.",
+            image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459593259913308/noFilter.png?ex=6654d2d8&is=66538158&hm=f412d58d1768475274a5ed10961719e952db67580211fb3468e5f2e7066ce88e&"
+        },
+        {
+            name: "riskyworld",
+            title: "Community Server Founder",
+            description: "A dedicated advocate for our community's growth and success.",
+            image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459686461542470/noFilter.png?ex=6654d2ee&is=6653816e&hm=0619b98e5dc10fa6cd1420ee2802ca7a377bf26bb1aa67c084226f0804847e27&"
+        },
+        {
+            name: "Xx_Gamer462",
+            title: "Website Manager/Developer",
+            description: "The genius behind our sleek and functional website design.",
+            image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459862811054222/noFilter.png?ex=6654d318&is=66538198&hm=42616a4e58ce752027cbd83803ffd3db443216cf581d77e7c83a1d92f7413c71&"
+        }
+    ];
+
+    members.forEach(member => {
+        console.log(`${member.name} - ${member.title}: ${member.description}`);
+        console.log(`Image: ${member.image}`);
+    });
+});
 let modal = document.getElementById('myModal');
 let creditsModal = document.getElementById('creditsModal');
 let searchButton = document.getElementById("search");
