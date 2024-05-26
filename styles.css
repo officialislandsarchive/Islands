@@ -183,7 +183,7 @@ body {
     font-size: 18px;
     padding: 8px 15px;
     border-radius: 20px;
-    background-color: #00ff00;
+    background-color: #66cc66;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
     z-index: 1;
@@ -198,7 +198,6 @@ body {
     font-weight: bold;
 }
 
-/* Add cool hover effects to the item-box */
 .item-box:before {
     content: "";
     position: absolute;
@@ -250,12 +249,12 @@ body {
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
-    background-color: #00ff00; /* Changed the background color to green */
+    background-color: #00ff00; 
     transition: all 0.3s ease-in-out;
     border: none;
     cursor: pointer;
 }
 
 .price-update .btn:hover {
-    background-color: #008000; /* Changed the hover background color to a darker green */
+    background-color: #008000; 
 }
