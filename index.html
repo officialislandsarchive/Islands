@@ -24,8 +24,8 @@
         <button class="btn" onclick="openModal('ore')">Ore</button>
     </div>
     
-    <div class="discord-btn">
-        <button class="btn" onclick="window.location.href='https://discord.gg/y8zgDYQUg2'">Join our Discord Server</button>
+    <div class="credits-btn">
+        <button class="btn" onclick="openCreditsModal()">Credits</button>
     </div>
     
     <div class="search-container">
@@ -43,6 +43,14 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <h2 id="modalTitle"></h2>
         <div id="modalItems"></div>
+    </div>
+</div>
+
+<div id="creditsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeCreditsModal()">&times;</span>
+        <h2>Credits</h2>
+        <div id="creditsContent"></div>
     </div>
 </div>
 
