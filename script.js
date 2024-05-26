@@ -264,27 +264,25 @@ function showCredits() {
     creditsList.innerHTML = "";
 
     let credits = [
-        "dawginator4000 | Game Developer",
-        "PartlyScientific | Community Server Founder",
-        "riskyworld | Community Server Founder",
-        "Xx_Gamer462 | Website Manager/Developer"
+        { name: "dawginator4000", role: "Game Developer", imageUrl: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459480902893568/noFilter.png?ex=6654d2bd&is=6653813d&hm=7bfe898697c99da6f8c200e62343b164c4985b7a62ef180fad4d19462f7006bd" },
+        { name: "PartlyScientific", role: "Community Server Founder", imageUrl: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459593259913308/noFilter.png?ex=6654d2d8&is=66538158&hm=f412d58d1768475274a5ed10961719e952db67580211fb3468e5f2e7066ce88e" },
+        { name: "riskyworld", role: "Community Server Founder", imageUrl: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459686461542470/noFilter.png?ex=6654d2ee&is=6653816e&hm=0619b98e5dc10fa6cd1420ee2802ca7a377bf26bb1aa67c084226f0804847e27" },
+        { name: "Xx_Gamer462", role: "Website Manager/Developer", imageUrl: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459862811054222/noFilter.png?ex=6654d318&is=66538198&hm=42616a4e58ce752027cbd83803ffd3db443216cf581d77e7c83a1d92f7413c71" }
     ];
 
     credits.forEach(credit => {
         let creditItem = document.createElement("div");
         creditItem.classList.add("credit-item");
 
-        let [name, role, imageUrl] = credit.split(" | ");
-        
         let creditName = document.createElement("span");
-        creditName.textContent = name;
+        creditName.textContent = credit.name;
         
         let creditRole = document.createElement("span");
-        creditRole.textContent = role;
+        creditRole.textContent = credit.role;
 
         let creditImage = document.createElement("img");
-        creditImage.src = imageUrl;
-        creditImage.alt = name;
+        creditImage.src = credit.imageUrl;
+        creditImage.alt = credit.name;
 
         creditItem.appendChild(creditImage);
         creditItem.appendChild(creditName);
