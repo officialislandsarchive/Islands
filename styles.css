@@ -237,3 +237,10 @@ body {
 .price-update .btn:hover {
     background-color: #008000; 
 }
+
+.credits-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
