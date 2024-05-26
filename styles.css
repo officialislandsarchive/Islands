@@ -217,3 +217,68 @@ body {
     right: 0;
     bottom: 0;
 }
+
+.discord-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.discord-btn .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #7289da;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.discord-btn .btn:hover {
+    background-color: #5f73a1;
+}
+
+.price-update {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.price-update .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #00ff00; 
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.price-update .btn:hover {
+    background-color: #008000; 
+}
+
+/* New styles for the Credits button */
+
+.credits-btn {
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.credits-btn .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #ffcc00; 
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.credits-btn .btn:hover {
+    background-color: #cc9900; 
+}
+
