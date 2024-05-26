@@ -1,38 +1,4 @@
-document.querySelector('.credits-btn .btn').addEventListener('click', function() {
-    const members = [
-        {
-            name: "dawginator4000",
-            title: "Game Developer",
-            description: "The mastermind behind our immersive game experiences.",
-            image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459480902893568/noFilter.png?ex=6654d2bd&is=6653813d&hm=7bfe898697c99da6f8c200e62343b164c4985b7a62ef180fad4d19462f7006bd&"
-        },
-        {
-            name: "PartlyScientific",
-            title: "Community Server Founder",
-            description: "A visionary leader who brought our community together.",
-            image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459593259913308/noFilter.png?ex=6654d2d8&is=66538158&hm=f412d58d1768475274a5ed10961719e952db67580211fb3468e5f2e7066ce88e&"
-        },
-        {
-            name: "riskyworld",
-            title: "Community Server Founder",
-            description: "A dedicated advocate for our community's growth and success.",
-            image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459686461542470/noFilter.png?ex=6654d2ee&is=6653816e&hm=0619b98e5dc10fa6cd1420ee2802ca7a377bf26bb1aa67c084226f0804847e27&"
-        },
-        {
-            name: "Xx_Gamer462",
-            title: "Website Manager/Developer",
-            description: "The genius behind our sleek and functional website design.",
-            image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459862811054222/noFilter.png?ex=6654d318&is=66538198&hm=42616a4e58ce752027cbd83803ffd3db443216cf581d77e7c83a1d92f7413c71&"
-        }
-    ];
-
-    members.forEach(member => {
-        console.log(`${member.name} - ${member.title}: ${member.description}`);
-        console.log(`Image: ${member.image}`);
-    });
-});
 let modal = document.getElementById('myModal');
-let creditsModal = document.getElementById('creditsModal');
 let searchButton = document.getElementById("search");
 let searchEntry = document.getElementById("searchInput");
 
@@ -161,42 +127,38 @@ let items = {
 fetchJson()
 
 function openModal(category) {
-    if (category === 'credits') {
-        creditsModal.style.display = "block";
-    } else {
-        modal.style.display = "block";
-        let list = document.getElementById("modalItems");
-        list.innerHTML = "";
+    modal.style.display = "block";
 
-        items[category].forEach(function(item) {
-            var itemBox = document.createElement("div");
-            itemBox.classList.add("item-box");
+    let list = document.getElementById("modalItems");
+    list.innerHTML = "";
 
-            let itemName = document.createElement("span");
-            itemName.classList.add("item-name");
-            itemName.textContent = item.name;
+    items[category].forEach(function(item) {
+        var itemBox = document.createElement("div");
+        itemBox.classList.add("item-box");
 
-            let coinValue = document.createElement("span");
-            coinValue.classList.add("coin-value");
-            coinValue.textContent = "Coin Value: " + item.value;
+        let itemName = document.createElement("span");
+        itemName.classList.add("item-name");
+        itemName.textContent = item.name;
 
-            itemBox.appendChild(itemName);
-            itemBox.appendChild(coinValue);
-            list.appendChild(itemBox);
-        });
+        let coinValue = document.createElement("span");
+        coinValue.classList.add("coin-value");
+        coinValue.textContent = "Coin Value: " + item.value;
 
-        document.getElementById("modalTitle").textContent = category.charAt(0).toUpperCase() + category.slice(1);
-    }
+        itemBox.appendChild(itemName);
+        itemBox.appendChild(coinValue);
+        list.appendChild(itemBox);
+    });
+
+    document.getElementById("modalTitle").textContent = category.charAt(0).toUpperCase() + category.slice(1);
 }
 
-function closeModal(modalId = 'myModal') {
-    document.getElementById(modalId).style.display = 'none';
+function closeModal() {
+    modal.style.display = "none";
 }
 
 window.onclick = function(event) {
-    if (event.target == modal || event.target == creditsModal) {
+    if (event.target == modal) {
         modal.style.display = "none";
-        creditsModal.style.display = "none";
     }
 }
 
@@ -219,6 +181,7 @@ function handleSearch() {
 }
 
 function openModelFromArray(array) {
+
     modal.style.display = "block";
 
     let list = document.getElementById("modalItems");
@@ -246,14 +209,17 @@ function openModelFromArray(array) {
 
 function getCoinValue(name) {
     for (let key in items) {
+
         items[key].forEach(function(val) {
             if (val.name.toLowerCase() == name.toLowerCase()) {
+
                 return val.value;
             }
         })
 
         for (let i = 0; i < items[key].length; i++) {
             val = items[key][i];
+
             if (val.name == name) {
                 return val.value;
             }
@@ -265,6 +231,7 @@ searchButton.onclick = handleSearch
 
 function updateJson(data) {
   console.log(data)
+
     for (let key in items) {
         for (let key2 in items[key]) {
             let priceVal = data[items[key][key2].name]
@@ -274,6 +241,7 @@ function updateJson(data) {
 }
 
 function fetchJson() {
+
     fetch(serverUrl)
     .then(response => response.text())
     .then(data => {
