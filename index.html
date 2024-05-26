@@ -22,6 +22,7 @@
         <button class="btn" onclick="openModal('slimeIsland')">Slime Island</button>
         <button class="btn" onclick="openModal('tools')">Tools</button>
         <button class="btn" onclick="openModal('ore')">Ore</button>
+        <button class="btn" onclick="openModal('credits')">Credits</button> <!-- Added Credits button -->
     </div>
     
     <div class="discord-btn">
@@ -43,6 +44,16 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <h2 id="modalTitle"></h2>
         <div id="modalItems"></div>
+    </div>
+</div>
+
+<!-- Credits Modal -->
+<div id="creditsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('creditsModal')">&times;</span>
+        <h2>Credits</h2>
+        <p>This project was developed by XYZ Team.</p>
+        <p>Special thanks to the contributors and community members.</p>
     </div>
 </div>
 
