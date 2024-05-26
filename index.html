@@ -22,10 +22,11 @@
         <button class="btn" onclick="openModal('slimeIsland')">Slime Island</button>
         <button class="btn" onclick="openModal('tools')">Tools</button>
         <button class="btn" onclick="openModal('ore')">Ore</button>
+        <button class="btn" onclick="openModal('credits')">Credits</button> <!-- Updated to Credits button -->
     </div>
     
     <div class="discord-btn">
-        <button class="btn" onclick="window.location.href='https://discord.gg/y8zgDYQUg2'">Join our Discord Server</button>
+        <button class="btn" onclick="openModal('credits')">Credits</button> <!-- Updated Credits button -->
     </div>
     
     <div class="search-container">
@@ -46,9 +47,13 @@
     </div>
 </div>
 
-<!-- Credits Button -->
-<div class="credits-button">
-    <button class="btn" onclick="openModal('credits')">Credits</button>
+<!-- Credits Modal -->
+<div id="creditsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('creditsModal')">&times;</span>
+        <h2>Credits</h2>
+        <!-- Content will be dynamically added through JavaScript -->
+    </div>
 </div>
 
 <script src="script.js"></script>
