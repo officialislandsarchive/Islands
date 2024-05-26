@@ -277,8 +277,6 @@
     background-color: #008000; 
 }
 
-/* New styles for the Credits button */
-
 .credits-btn {
     position: fixed;
     bottom: 50%;
@@ -299,4 +297,3 @@
 .credits-btn .btn:hover {
     background-color: #cc9900; 
 }
-
