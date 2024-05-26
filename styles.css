@@ -217,27 +217,6 @@ body {
     right: 0;
     bottom: 0;
 }
-
-.discord-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-}
-
-.discord-btn .btn {
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 10px;
-    background-color: #7289da;
-    transition: all 0.3s ease-in-out;
-    border: none;
-    cursor: pointer;
-}
-
-.discord-btn .btn:hover {
-    background-color: #5f73a1;
-}
-
 .price-update {
     position: fixed;
     bottom: 20px;
