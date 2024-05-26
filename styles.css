@@ -225,7 +225,8 @@ body {
 }
 
 .discord-btn .btn {
-    padding: 12px 24px;
+    padding: 12px 
+24px;
     font-size: 16px;
     border-radius: 10px;
     background-color: #7289da;
@@ -259,9 +260,25 @@ body {
     background-color: #008000; 
 }
 
-.credits-button {
+/* New styles for the Credits button */
+
+.credits-btn {
     position: fixed;
-    bottom: 20px;
+    bottom: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 50%);
+}
+
+.credits-btn .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #ffcc00; 
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.credits-btn .btn:hover {
+    background-color: #cc9900; 
 }
