@@ -217,6 +217,7 @@ body {
     right: 0;
     bottom: 0;
 }
+
 .price-update {
     position: fixed;
     bottom: 20px;
@@ -239,22 +240,45 @@ body {
 }
 
 .credits-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #00ff00, #008000);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
 
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 10px;
+.credits-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.credit-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.credit-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.credit-name {
+    font-weight: bold;
+    font-size: 24px;
+    color: #00ff00;
+}
+
+.credit-role {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.credit-description {
+    margin-top: 10px;
+    color: #aaa;
 }
