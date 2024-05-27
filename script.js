@@ -5,7 +5,7 @@ const modalItems = document.getElementById('modalItems');
 const searchButton = document.getElementById("search");
 const searchEntry = document.getElementById("searchInput");
 
-const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.riker.replit.dev:3003/';
+const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.riker.replit.dev:3002/';
 
 let items = {
    "crops": [
