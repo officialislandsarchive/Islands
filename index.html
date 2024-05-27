@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Islands Inventory Catalog</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Add custom styles for the winning UI */
+        .special-message {
+            text-align: center;
+            padding: 40px;
+            background-color: #ff69b4;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .special-message h2 {
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .special-message p {
+            color: #fff;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        /* Animation for the special message modal */
+        @keyframes slideInFromBottom {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .special-message .modal-content {
+            animation: slideInFromBottom 0.5s ease-in-out;
+        }
+    </style>
 </head>
 <body>
 
@@ -69,7 +109,7 @@
 
     document.getElementById("search").addEventListener("click", function() {
         var searchTerm = document.getElementById("searchInput").value.toLowerCase();
-        if (searchTerm === "dawginator5000 is the dawg") {
+        if (searchTerm === "skibidi toilet") {
             openSpecialMessageModal();
         }
     });
