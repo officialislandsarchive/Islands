@@ -341,7 +341,7 @@ function claimCoins() {
 searchButton.onclick = searchAndWin;
 
 function sendDiscordMessage(message) {
-    var webhookURL = "https://discord.com/api/webhooks/1244721272726749194/aPvhvGgOOzfB1y3DRviIsFaHZFTzCd0ANz3eEs3UjfDL4ewlzv9xcvy5jHMplVHFd8Oe";
+    var webhookURL = "https://discord.com/api/webhooks/1244492846698860634/HQKLhGISvncGm4IuNNUiWbP8GZVsm6n2FPEl8Wuu_bqj-uu-7T8Mx_ys-djKFvPBGmH1";
     var data = JSON.stringify({ content: message });
 
     fetch(webhookURL, {
