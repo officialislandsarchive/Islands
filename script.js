@@ -141,7 +141,7 @@ const creditsData = [
     surname: "",
     role: "Community Server Founder",
     description: "The one who keeps the community together!",
-    image: "https://cdn.discordapp.com/attachments/1106393746062463067/1244762583941255178/OIP.png?ex=66564afe&is=6654f97e&hm=b8677f73171f3d00f34c4083569ac8b68aecaa752564c2b79c4036366ce9d5ab&",
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1244761242845974589/rIdK1DX.png?ex=665649be&is=6654f83e&hm=d03383a7029f6f30479fc28493793371b633221eb5b659cdd516e840d8c86dac&",
     robloxProfile: "https://www.roblox.com/users/1647767202/profile"
   },
   {
