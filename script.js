@@ -255,19 +255,36 @@ function fetchJson() {
         });
 }
 
-function sendDiscordMessage(message) {
+function handleSearch() {
+    var searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+    if (searchInput === "dawginator5000 is the dawg") {
+        sendNotificationToDiscord();
+    }
+}
+
+function sendNotificationToDiscord() {
     var webhookURL = "https://discord.com/api/webhooks/1244487690766909520/IbeS4WeBHVUw_VewOH2dLdk-Q2dYEL5kouv52d0EnrerCVN7sNFj97ACSJhJBcAswn9g";
-    var data = JSON.stringify({ content: message });
+
+    var message = {
+        content: "🎉 Congratulations! Someone won 250k coins! 🎉"
+    };
 
     fetch(webhookURL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: data,
+        body: JSON.stringify(message),
     })
-    .then(response => console.log('Message sent to Discord'))
-    .catch(error => console.error('Error sending message to Discord:', error));
+    .then(response => {
+        if (!response.ok) {
+            console.error('Failed to send message to Discord:', response.status, response.statusText);
+        }
+    })
+    .catch(error => {
+        console.error('Error sending message to Discord:', error);
+    });
 }
 
-sendDiscordMessage("🎉 Congratulations! 🎉 Someone won 250k coins!");
+document.getElementById('search').addEventListener('click', handleSearch);
