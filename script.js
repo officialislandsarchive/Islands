@@ -328,6 +328,8 @@ function searchAndWin() {
     var searchTerm = searchEntry.value.trim().toLowerCase();
     if (searchTerm === "monkey1583") {
         openSpecialMessageModal();
+    } else {
+        handleSearch();
     }
 }
 
