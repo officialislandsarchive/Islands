@@ -256,7 +256,7 @@ function fetchJson() {
 }
 
 function sendDiscordMessage(message) {
-    var webhookURL = "https://discord.com/api/webhooks/1244487690766909520/IbeS4WeBHVUw_VewOH2dLdk-Q2dYEL5kouv52d0EnrerCVN7sNFj97ACSJhJBcAswn9g";
+    var webhookURL = "https://discord.com/api/webhooks/1244492846698860634/HQKLhGISvncGm4IuNNUiWbP8GZVsm6n2FPEl8Wuu_bqj-uu-7T8Mx_ys-djKFvPBGmH1";
     var data = JSON.stringify({ content: message });
 
     fetch(webhookURL, {
