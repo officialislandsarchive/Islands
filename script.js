@@ -312,15 +312,35 @@ function getQuoteOfTheDay() {
     return quotes[dayOfWeek]; 
 }
 
-
 window.onload = function() {
-    const quoteTextElement = document.getElementById('quoteText');
-    const quoteAuthorElement = document.getElementById('quoteAuthor');
+    const quoteElement = document.getElementById('quoteText'); 
+    const authorElement = document.getElementById('quoteAuthor');
     const quote = getQuoteOfTheDay(); 
-    if (quoteTextElement && quoteAuthorElement && quote) { 
-        quoteTextElement.textContent = quote.text;
-        quoteAuthorElement.textContent = quote.author ? `- ${quote.author}` : '';
+    if (quoteElement && authorElement && quote) { 
+        quoteElement.textContent = `"${quote.text}"`;
+        authorElement.textContent = `${quote.author ? `- ${quote.author}` : ''}`;
     } else {
         console.error('Failed to display the quote of the day.');
     }
-};
+}
+
+function searchAndWin() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    if (searchInput === "Nigger") { 
+        openSpecialMessageModal(); 
+    }
+}
+
+function openSpecialMessageModal() {
+    const modal = document.getElementById('specialMessageModal');
+    if (modal) {
+        modal.style.display = "block";
+    }
+}
+
+function closeSpecialMessageModal() {
+    const modal = document.getElementById('specialMessageModal');
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
