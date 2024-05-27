@@ -140,7 +140,7 @@ const creditsData = [
     surname: "",
     role: "Community Server Founder",
     description: "The one who keeps the community together!",
-    image: "https://cdn.discordapp.com/attachments/1244404918761164840/1244492201363378209/QyW6v8U.png?ex=66554f2e&is=6653fdae&hm=c6f6c8f30cc2f31b02330e8bd56369cff7d71c483d7139bc068e195c8f405a52&"
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459593259913308/noFilter.png?ex=6654d2d8&is=66538158&hm=f412d58d1768475274a5ed10961719e952db67580211fb3468e5f2e7066ce88e&"
   },
   {
     name: "riskyworld",
@@ -256,16 +256,18 @@ function fetchJson() {
 }
 
 function sendDiscordMessage(message) {
-    const visited = sessionStorage.getItem('visited');
-    if (!visited) {
-        var webhookURL = "https://discord.com/api/webhooks/1244492846698860634/HQKLhGISvncGm4IuNNUiWbP8GZVsm6n2FPEl8Wuu_bqj-uu-7T8Mx_ys-djKFvPBGmH1";
-        var data = JSON.stringify({ content: message });
+    var webhookURL = "https://discord.com/api/webhooks/1244492846698860634/HQKLhGISvncGm4IuNNUiWbP8GZVsm6n2FPEl8Wuu_bqj-uu-7T8Mx_ys-djKFvPBGmH1";
+    var data = JSON.stringify({ content: message });
 
-        fetch(webhookURL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: data,
-        })
-        .then(response => console.log('Message sent to Discord'))
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: data,
+    })
+    .then(response => console.log('Message sent to Discord'))
+    .catch(error => console.error('Error sending message to Discord:', error));
+}
+
+sendDiscordMessage("🚀Someone Visited The Website!🚀");
