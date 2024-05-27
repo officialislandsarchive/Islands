@@ -299,12 +299,12 @@ document.getElementById("creditsBtn").addEventListener("click", showCredits);
 
 const quotes = [
     { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
-    { text: "", author: "" },
-    { text: "", author: "" },
-    { text: "", author: "" },
-    { text: "", author: "" },
-    { text: "", author: "" },
-    { text: "", author: "John Lennon" }
+    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
+    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
+    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
+    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
+    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
+    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" }
 ];
 
 function getQuoteOfTheDay() {
@@ -327,7 +327,7 @@ window.onload = function() {
 const searchButton = document.getElementById("search");
 
 function searchAndWin() {
-    var searchTerm = searchInput.value.trim().toLowerCase();
+    var searchTerm = document.getElementById("searchInput").value.trim().toLowerCase();
     if (searchTerm === "monkey1583") {
         openSpecialMessageModal();
     } else {
