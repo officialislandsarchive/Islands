@@ -324,8 +324,6 @@ window.onload = function() {
     }
 }
 
-const searchButton = document.getElementById("search");
-
 function searchAndWin() {
     var searchTerm = document.getElementById("searchInput").value.trim().toLowerCase();
     if (searchTerm === "monkey1583") {
