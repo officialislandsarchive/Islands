@@ -316,7 +316,7 @@ window.onload = function() {
 
 function searchAndWin() {
     var searchTerm = document.getElementById("searchInput").value.trim().toLowerCase();
-    if (searchTerm === "monkey1583") {
+    if (searchTerm === "Testing") {
         openSpecialMessageModal();
     } else {
         handleSearch();
