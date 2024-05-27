@@ -214,11 +214,6 @@ function showCredits() {
     `).join('');
 }
 
-function getRobloxProfileUrl(username) {
-    return `https://www.roblox.com/users/${username}/profile`;
-}
-
-document.getElementById("creditsBtn").addEventListener("click", showCredits);
 
 function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
