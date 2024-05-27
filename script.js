@@ -314,11 +314,12 @@ function getQuoteOfTheDay() {
 
 
 window.onload = function() {
-    const quoteElement = document.getElementById('quote'); 
+    const quoteTextElement = document.getElementById('quoteText');
+    const quoteAuthorElement = document.getElementById('quoteAuthor');
     const quote = getQuoteOfTheDay(); 
-    if (quoteElement && quote) { 
-  
-        quoteElement.textContent = `"${quote.text}" ${quote.author ? `- ${quote.author}` : ''}`;
+    if (quoteTextElement && quoteAuthorElement && quote) { 
+        quoteTextElement.textContent = quote.text;
+        quoteAuthorElement.textContent = quote.author ? `- ${quote.author}` : '';
     } else {
         console.error('Failed to display the quote of the day.');
     }
