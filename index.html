@@ -6,44 +6,46 @@
     <title>Islands Inventory Catalog</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-        .special-message {
-            text-align: center;
-            padding: 40px;
-            background-color: #ff69b4;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
+       .special-message {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(to bottom, #ff69b4, #ff007f);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+}
 
-        .special-message h2, .special-message p {
-            color: #fff;
-        }
+.special-message h2, .special-message p {
+    color: #fff;
+    font-family: 'Roboto', sans-serif; 
+}
 
-        .special-message h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+.special-message h2 {
+    font-size: 48px;
+    margin-bottom: 30px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px; 
+    animation: glow 2s ease-in-out infinite alternate; 
+}
 
-        .special-message p {
-            font-size: 24px;
-            margin-top: 20px;
-        }
+.special-message p {
+    font-size: 24px;
+    margin-top: 20px;
+    line-height: 1.5; 
+}
 
-        @keyframes slideInFromBottom {
-            0% {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff007f, 0 0 30px #ff007f, 0 0 40px #ff007f; 
+    }
+}
 
-        .special-message .modal-content {
-            animation: slideInFromBottom 0.5s ease-in-out;
-        }
+.special-message .modal-content {
+    animation: slideInFromBottom 0.5s ease-in-out;
+}
 
       .quote-container {
     text-align: center;
