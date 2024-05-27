@@ -343,4 +343,7 @@ function closeSpecialMessageModal() {
     modal.style.display = "none";
 }
 
+function claimCoins() {
+window.location.href = "https://discord.com/channels/1238305104830926848/1238631329801830422";
+}
 searchButton.onclick = searchAndWin;
