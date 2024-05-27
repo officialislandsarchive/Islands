@@ -129,39 +129,44 @@ let items = {
 
 const creditsData = [
   {
-   name: "dawginator4000",
+    name: "dawginator4000",
     surname: "",
     role: "Game Developer",
     description: "The one who makes the magic happen!",
-    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459480902893568/noFilter.png?ex=6654d2bd&is=6653813d&hm=7bfe898697c99da6f8c200e62343b164c4985b7a62ef180fad4d19462f7006bd&"
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459480902893568/noFilter.png?ex=6654d2bd&is=6653813d&hm=7bfe898697c99da6f8c200e62343b164c4985b7a62ef180fad4d19462f7006bd&",
+    robloxProfile: "https://www.roblox.com/users/5847760687/profile"
   },
   {
     name: "PartlyScientific",
     surname: "",
     role: "Community Server Founder",
     description: "The one who keeps the community together!",
-    image: "https://cdn.discordapp.com/attachments/1106393746062463067/1244762583941255178/OIP.png?ex=66564afe&is=6654f97e&hm=b8677f73171f3d00f34c4083569ac8b68aecaa752564c2b79c4036366ce9d5ab&"
+    image: "https://cdn.discordapp.com/attachments/1106393746062463067/1244762583941255178/OIP.png?ex=66564afe&is=6654f97e&hm=b8677f73171f3d00f34c4083569ac8b68aecaa752564c2b79c4036366ce9d5ab&",
+    robloxProfile: "https://www.roblox.com/users/1647767202/profile"
   },
   {
     name: "riskyworld",
     surname: "",
     role: "Community Server Founder",
     description: "The one who leads the community!",
-    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459686461542470/noFilter.png?ex=6654d2ee&is=6653816e&hm=0619b98e5dc10fa6cd1420ee2802ca7a377bf26bb1aa67c084226f0804847e27&"
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459686461542470/noFilter.png?ex=6654d2ee&is=6653816e&hm=0619b98e5dc10fa6cd1420ee2802ca7a377bf26bb1aa67c084226f0804847e27&",
+    robloxProfile: "https://www.roblox.com/users/137462357/profile"
   },
   {
     name: "Xx_Gamer462",
     surname: "",
     role: "Website Manager/Developer",
     description: "The one who manages everything!",
-    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459862811054222/noFilter.png?ex=6654d318&is=66538198&hm=42616a4e58ce752027cbd83803ffd3db443216cf581d77e7c83a1d92f7413c71&"
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459862811054222/noFilter.png?ex=6654d318&is=66538198&hm=42616a4e58ce752027cbd83803ffd3db443216cf581d77e7c83a1d92f7413c71&",
+    robloxProfile: "https://www.roblox.com/users/3823651589/profile"
   },
   {
     name: "jopkljokez2",
     surname: "",
     role: "Website Developer",
     description: "The one who adds the magic touch!",
-    image: "https://cdn.discordapp.com/attachments/1091908728992837704/1244474341123559454/noFilter.png?ex=66553e8c&is=6653ed0c&hm=7b373d3915f106afe38e2806416774fa3ab9e19af75ab3a03d6a59bbde04f623&"
+    image: "https://cdn.discordapp.com/attachments/1091908728992837704/1244474341123559454/noFilter.png?ex=66553e8c&is=6653ed0c&hm=7b373d3915f106afe38e2806416774fa3ab9e19af75ab3a03d6a59bbde04f623&",
+    robloxProfile: "https://www.roblox.com/users/1044649449/profile"
   },
 ];
 
@@ -189,14 +194,16 @@ function showCredits() {
     modal.style.display = "block";
     modalTitle.textContent = "Credits";
     modalItems.innerHTML = creditsData.map(person => `
-        <div class="item-box">
-            <img src="${person.image}" alt="${person.name}" class="credit-image">
-            <div class="credit-details">
-                <div class="credit-name">${person.name} ${person.surname}</div>
-                <div class="credit-role">${person.role}</div>
-                <div class="credit-description">${person.description}</div>
+        <a href="${person.robloxProfile}" target="_blank" class="credit-link">
+            <div class="item-box">
+                <img src="${person.image}" alt="${person.name}" class="credit-image">
+                <div class="credit-details">
+                    <div class="credit-name">${person.name} ${person.surname}</div>
+                    <div class="credit-role">${person.role}</div>
+                    <div class="credit-description">${person.description}</div>
+                </div>
             </div>
-        </div>
+        </a>
     `).join('');
 }
 
