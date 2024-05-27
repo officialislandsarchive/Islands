@@ -256,18 +256,16 @@ function fetchJson() {
 }
 
 function sendDiscordMessage(message) {
-    var webhookURL = "https://discord.com/api/webhooks/1244492846698860634/HQKLhGISvncGm4IuNNUiWbP8GZVsm6n2FPEl8Wuu_bqj-uu-7T8Mx_ys-djKFvPBGmH1";
-    var data = JSON.stringify({ content: message });
+    const visited = sessionStorage.getItem('visited');
+    if (!visited) {
+        var webhookURL = "https://discord.com/api/webhooks/1244492846698860634/HQKLhGISvncGm4IuNNUiWbP8GZVsm6n2FPEl8Wuu_bqj-uu-7T8Mx_ys-djKFvPBGmH1";
+        var data = JSON.stringify({ content: message });
 
-    fetch(webhookURL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: data,
-    })
-    .then(response => console.log('Message sent to Discord'))
-    .catch(error => console.error('Error sending message to Discord:', error));
-}
-
-sendDiscordMessage("🚀Someone Visited The Website!🚀");
+        fetch(webhookURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: data,
+        })
+        .then(response => console.log('Message sent to Discord'))
