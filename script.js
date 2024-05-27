@@ -324,8 +324,10 @@ window.onload = function() {
     }
 }
 
+const searchButton = document.getElementById("search");
+
 function searchAndWin() {
-    var searchTerm = searchEntry.value.trim().toLowerCase();
+    var searchTerm = searchInput.value.trim().toLowerCase();
     if (searchTerm === "monkey1583") {
         openSpecialMessageModal();
     } else {
@@ -344,6 +346,7 @@ function closeSpecialMessageModal() {
 }
 
 function claimCoins() {
-window.location.href = "https://discord.com/channels/1238305104830926848/1238631329801830422";
+    window.location.href = "https://discord.com/channels/1238305104830926848/1238631329801830422";
 }
+
 searchButton.onclick = searchAndWin;
