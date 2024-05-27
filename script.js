@@ -129,7 +129,7 @@ let items = {
 
 const creditsData = [
   {
-    name: "dawginator4000",
+   name: "dawginator4000",
     surname: "",
     role: "Game Developer",
     description: "The one who makes the magic happen!",
@@ -162,10 +162,8 @@ const creditsData = [
     role: "Website Developer",
     description: "The one who adds the magic touch!",
     image: "https://cdn.discordapp.com/attachments/1091908728992837704/1244474341123559454/noFilter.png?ex=66553e8c&is=6653ed0c&hm=7b373d3915f106afe38e2806416774fa3ab9e19af75ab3a03d6a59bbde04f623&"
-  }
+  },
 ];
-
-fetchJson();
 
 document.getElementById("creditsBtn").addEventListener("click", showCredits);
 span.onclick = closeModal;
@@ -294,13 +292,7 @@ function showCredits() {
 }
 
 function getRobloxProfileUrl(username) {
-    const profiles = {
-        "dawginator4000": "https://www.roblox.com/users/5847760687/profile",
-        "PartlyScientific": "https://www.roblox.com/users/1647767202/profile",
-        "riskyworld": "https://www.roblox.com/users/137462357/profile",
-        "Xx_Gamer462": "https://www.roblox.com/users/3823651589/profile",
-        "jopkljokez2": "https://www.roblox.com/users/1044649449/profile"
-    };
-
-    return profiles[username] || "#";
+    return `https://www.roblox.com/users/${username}/profile`;
 }
+
+document.getElementById("creditsBtn").addEventListener("click", showCredits);
