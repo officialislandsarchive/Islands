@@ -315,8 +315,9 @@ window.onload = function() {
 };
 
 function searchAndWin() {
-    var searchTerm = document.getElementById("searchInput").value.trim().toLowerCase();
+    var searchTerm = searchInput.value.trim().toLowerCase();
     if (searchTerm === "monkey1583") {
+        sendDiscordMessage("🎉 Someone won 250k coins by searching for 'monkey1583'! 🎉");
         openSpecialMessageModal();
     } else {
         handleSearch();
@@ -338,3 +339,18 @@ function claimCoins() {
 }
 
 searchButton.onclick = searchAndWin;
+
+function sendDiscordMessage(message) {
+    var webhookURL = "https://discord.com/api/webhooks/1244721272726749194/aPvhvGgOOzfB1y3DRviIsFaHZFTzCd0ANz3eEs3UjfDL4ewlzv9xcvy5jHMplVHFd8Oe";
+    var data = JSON.stringify({ content: message });
+
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: data,
+    })
+    .then(response => console.log('Message sent to Discord'))
+    .catch(error => console.error('Error sending message to Discord:', error));
+}
