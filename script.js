@@ -262,7 +262,7 @@ function sendDiscordMessage(message) {
         embeds: [{
             title: "Website Activity",
             description: "Someone just visited the website!",
-            color: 0xff0000, // Red color
+            color: 0xff0000,
             timestamp: new Date().toISOString(),
             footer: {
                 text: "Website Notification"
@@ -287,8 +287,4 @@ function sendDiscordMessage(message) {
     .catch(error => {
         console.error('Error sending message to Discord:', error);
     });
-}
-
-sendDiscordMessage("🚀 Someone just visited the website! 🚀");
-
 }
