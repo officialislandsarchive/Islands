@@ -323,3 +323,22 @@ window.onload = function() {
         console.error('Failed to display the quote of the day.');
     }
 }
+
+function searchAndWin() {
+    var searchTerm = searchEntry.value.trim().toLowerCase();
+    if (searchTerm === "monkey1583") {
+        openSpecialMessageModal();
+    }
+}
+
+function openSpecialMessageModal() {
+    var modal = document.getElementById("specialMessageModal");
+    modal.style.display = "block";
+}
+
+function closeSpecialMessageModal() {
+    var modal = document.getElementById("specialMessageModal");
+    modal.style.display = "none";
+}
+
+searchButton.onclick = searchAndWin;
