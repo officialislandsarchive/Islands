@@ -14,8 +14,11 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
 
-        .special-message h2 {
+        .special-message h2, .special-message p {
             color: #fff;
+        }
+
+        .special-message h2 {
             font-size: 36px;
             margin-bottom: 20px;
             font-weight: bold;
@@ -23,7 +26,6 @@
         }
 
         .special-message p {
-            color: #fff;
             font-size: 24px;
             margin-top: 20px;
         }
@@ -41,54 +43,72 @@
 
         .special-message .modal-content {
             animation: slideInFromBottom 0.5s ease-in-out;
-        }    
+        }
+
+        .quote-container {
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            background: #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .quote-text {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .quote-author {
+            font-size: 20px;
+            color: #ccc;
+        }
     </style>
 </head>
 <body>
-<div class="header">
-    <div class="title">Islands Inventory Catalog</div>
-    <div class="buttons-container">
-        <button class="btn" onclick="openModal('crops')">Crops</button>
-        <button class="btn" onclick="openModal('blocks')">Blocks</button>
-        <button class="btn" onclick="openModal('totems')">Totems</button>
-        <button class="btn" onclick="openModal('industrial')">Industrial</button>
-        <button class="btn" onclick="openModal('stations')">Stations</button>
-        <button class="btn" onclick="openModal('cooking')">Cooking</button>
-        <button class="btn" onclick="openModal('seeds')">Seeds</button>
-        <button class="btn" onclick="openModal('slimeIsland')">Slime Island</button>
-        <button class="btn" onclick="openModal('tools')">Tools</button>
-        <button class="btn" onclick="openModal('ore')">Ore</button>
+    <div class="header">
+        <div class="title">Islands Inventory Catalog</div>
+        <div class="buttons-container">
+            <button class="btn" onclick="openModal('crops')">Crops</button>
+            <button class="btn" onclick="openModal('blocks')">Blocks</button>
+            <button class="btn" onclick="openModal('totems')">Totems</button>
+            <button class="btn" onclick="openModal('industrial')">Industrial</button>
+            <button class="btn" onclick="openModal('stations')">Stations</button>
+            <button class="btn" onclick="openModal('cooking')">Cooking</button>
+            <button class="btn" onclick="openModal('seeds')">Seeds</button>
+            <button class="btn" onclick="openModal('slimeIsland')">Slime Island</button>
+            <button class="btn" onclick="openModal('tools')">Tools</button>
+            <button class="btn" onclick="openModal('ore')">Ore</button>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
+            <button id="search" class="search-btn">Search</button>
+        </div>
     </div>
-    <div class="search-container">
-        <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
-        <button id="search" class="search-btn">Search</button>
+    <div class="price-update">
+        <a href="https://officialislandsarchive.github.io/PriceUpdate/" class="btn" target="_blank">Help Update Prices Here!</a>
     </div>
-</div>
-
-<div class="price-update">
-    <a href="https://officialislandsarchive.github.io/PriceUpdate/" class="btn" target="_blank">Help Update Prices Here!</a>
-</div>
-
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2 id="modalTitle"></h2>
-        <div id="modalItems"></div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalItems"></div>
+        </div>
     </div>
-</div>
-
-<div id="specialMessageModal" class="modal">
-    <div class="modal-content special-message">
-        <span class="close" onclick="closeSpecialMessageModal()">&times;</span>
-        <h2>🎉 Congratulations! 🎉</h2>
-        <p>You won 250k coins!</p>
+    <div id="specialMessageModal" class="modal">
+        <div class="modal-content special-message">
+            <span class="close" onclick="closeSpecialMessageModal()">&times;</span>
+            <h2>🎉 Congratulations! 🎉</h2>
+            <p>You won 250k coins!</p>
+        </div>
     </div>
-</div>
-
-<div class="credits-btn-container">
-    <button id="creditsBtn" class="btn credits-btn">Credits</button>
-</div>
-
-<script src="script.js"></script>
+    <div class="quote-container">
+        <p id="quoteText" class="quote-text"></p>
+        <p id="quoteAuthor" class="quote-author"></p>
+    </div>
+    <div class="credits-btn-container">
+        <button id="creditsBtn" class="btn credits-btn">Credits</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
