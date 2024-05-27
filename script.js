@@ -140,7 +140,7 @@ const creditsData = [
     surname: "",
     role: "Community Server Founder",
     description: "The one who keeps the community together!",
-    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459593259913308/noFilter.png?ex=6654d2d8&is=66538158&hm=f412d58d1768475274a5ed10961719e952db67580211fb3468e5f2e7066ce88e&"
+    image: "https://cdn.discordapp.com/attachments/1106393746062463067/1244762583941255178/OIP.png?ex=66564afe&is=6654f97e&hm=b8677f73171f3d00f34c4083569ac8b68aecaa752564c2b79c4036366ce9d5ab&"
   },
   {
     name: "riskyworld",
