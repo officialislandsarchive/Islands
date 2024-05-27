@@ -202,7 +202,6 @@ function showCredits() {
     });
 }
 
-
 document.getElementById("creditsBtn").addEventListener("click", showCredits);
 
 function closeModal() {
