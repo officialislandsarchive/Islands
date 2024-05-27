@@ -194,23 +194,20 @@ function showCredits() {
     modal.style.display = "block";
     modalTitle.textContent = "Credits";
     modalItems.innerHTML = creditsData.map(person => `
-        <a href="${person.robloxProfile}" target="_blank" class="credit-link">
-            <div class="item-box">
-                <img src="${person.image}" alt="${person.name}" class="credit-image">
-                <div class="credit-details">
-                    <div class="credit-name">${person.name} ${person.surname}</div>
-                    <div class="credit-role">${person.role}</div>
-                    <div class="credit-description">${person.description}</div>
-                </div>
+        <div class="item-box" onclick="window.open('${person.robloxProfile}', '_blank')">
+            <img src="${person.image}" alt="${person.name}" class="credit-image">
+            <div class="credit-details">
+                <div class="credit-name">${person.name} ${person.surname}</div>
+                <div class="credit-role">${person.role}</div>
+                <div class="credit-description">${person.description}</div>
             </div>
-        </a>
+        </div>
     `).join('');
 }
 
 function closeModal() {
     modal.style.display = "none";
 }
-
 function handleSearch() {
     const keyword = searchEntry.value.toLowerCase();
     const results = [];
