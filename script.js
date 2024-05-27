@@ -298,13 +298,13 @@ function getRobloxProfileUrl(username) {
 document.getElementById("creditsBtn").addEventListener("click", showCredits);
 
 const quotes = [
-    { text: "Mondays are for fresh starts… and extra coffee!", author: "" },
-    { text: "Tuesday is just Monday's ugly sister.", author: "" },
-    { text: "Keep calm, it's hump day!", author: "" },
-    { text: "Thursday: The day I pretend to work the hardest.", author: "" },
-    { text: "It's Friday! Time to go make stories for Monday.", author: "" },
-    { text: "Saturday: The official day of doing nothing.", author: "" },
-    { text: "Life is what happens when you’re busy making other plans.", author: "John Lennon" }
+    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
+    { text: "", author: "" },
+    { text: "", author: "" },
+    { text: "", author: "" },
+    { text: "", author: "" },
+    { text: "", author: "" },
+    { text: "", author: "John Lennon" }
 ];
 
 function getQuoteOfTheDay() {
