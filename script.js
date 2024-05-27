@@ -297,23 +297,23 @@ function getRobloxProfileUrl(username) {
 
 document.getElementById("creditsBtn").addEventListener("click", showCredits);
 
-document.addEventListener('DOMContentLoaded', function() {
-    const quotes = [
-        { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
-        { text: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll" },
-        { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
-        { text: "You miss 100% of the shots you don’t take.", author: "Wayne Gretzky" },
-        { text: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
-        { text: "The purpose of our lives is to be happy.", author: "Dalai Lama" },
-        { text: "Life is what happens when you’re busy making other plans.", author: "John Lennon" }
-    ];
+const quotes = [
+    { text: "Mondays are for fresh starts… and extra coffee!", author: "" },
+    { text: "Tuesday is just Monday's ugly sister.", author: "" },
+    { text: "Keep calm, it's hump day!", author: "" },
+    { text: "Thursday: The day I pretend to work the hardest.", author: "" },
+    { text: "It's Friday! Time to go make stories for Monday.", author: "" },
+    { text: "Saturday: The official day of doing nothing.", author: "" },
+    { text: "Life is what happens when you’re busy making other plans.", author: "John Lennon" }
+];
 
-    function showQuoteOfTheDay() {
-        const dayOfWeek = new Date().getDay();
-        const quote = quotes[dayOfWeek];
-        document.getElementById('quoteText').innerText = quote.text;
-        document.getElementById('quoteAuthor').innerText = `- ${quote.author}`;
-    }
+function getQuoteOfTheDay() {
+    const dayOfWeek = new Date().getDay();
+    return quotes[dayOfWeek];
+}
 
-    showQuoteOfTheDay();
-});
+window.onload = function() {
+    const quoteElement = document.getElementById('quote');
+    const quote = getQuoteOfTheDay();
+    quoteElement.textContent = `"${quote.text}" ${quote.author ? `- ${quote.author}` : ''}`;
+};
