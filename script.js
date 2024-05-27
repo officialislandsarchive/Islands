@@ -277,3 +277,32 @@ if (!visited) {
     sendDiscordMessage("🚀Someone Visited The Website!🚀");
     sessionStorage.setItem('visited', true);
 }
+
+function showCredits() {
+    modal.style.display = "block";
+    modalTitle.textContent = "Credits";
+    modalItems.innerHTML = creditsData.map(person => `
+        <a href="${getRobloxProfileUrl(person.name)}" target="_blank" class="credit-link">
+            <div class="item-box">
+                <img src="${person.image}" alt="${person.name}" class="credit-image">
+                <div class="credit-details">
+                    <div class="credit-name">${person.name} ${person.surname}</div>
+                    <div class="credit-role">${person.role}</div>
+                    <div class="credit-description">${person.description}</div>
+                </div>
+            </div>
+        </a>
+    `).join('');
+}
+
+function getRobloxProfileUrl(username) {
+    const profiles = {
+        "dawginator4000": "https://www.roblox.com/users/5847760687/profile",
+        "PartlyScientific": "https://www.roblox.com/users/1647767202/profile",
+        "riskyworld": "https://www.roblox.com/users/137462357/profile",
+        "Xx_Gamer462": "https://www.roblox.com/users/3823651589/profile",
+        "jopkljokez2": "https://www.roblox.com/users/1044649449/profile"
+    };
+
+    return profiles[username] || "#";
+}
