@@ -57,10 +57,20 @@
 <script src="script.js"></script>
 
 <script>
-    document.getElementById("searchInput").addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("search").click();
+    function openSpecialMessageModal() {
+        var specialMessageModal = document.getElementById("specialMessageModal");
+        specialMessageModal.style.display = "block";
+    }
+
+    function closeSpecialMessageModal() {
+        var specialMessageModal = document.getElementById("specialMessageModal");
+        specialMessageModal.style.display = "none";
+    }
+
+    document.getElementById("search").addEventListener("click", function() {
+        var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+        if (searchTerm === "skibidi toilet") {
+            openSpecialMessageModal();
         }
     });
 </script>
