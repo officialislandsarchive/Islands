@@ -110,5 +110,13 @@
         <button id="creditsBtn" class="btn credits-btn">Credits</button>
     </div>
     <script src="script.js"></script>
+    <script>
+    document.getElementById("searchInput").addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("search").click();
+        }
+    });
+</script>
 </body>
 </html>
