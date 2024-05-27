@@ -308,12 +308,18 @@ const quotes = [
 ];
 
 function getQuoteOfTheDay() {
-    const dayOfWeek = new Date().getDay();
-    return quotes[dayOfWeek];
+    const dayOfWeek = new Date().getDay(); 
+    return quotes[dayOfWeek]; 
 }
 
+
 window.onload = function() {
-    const quoteElement = document.getElementById('quote');
-    const quote = getQuoteOfTheDay();
-    quoteElement.textContent = `"${quote.text}" ${quote.author ? `- ${quote.author}` : ''}`;
+    const quoteElement = document.getElementById('quote'); 
+    const quote = getQuoteOfTheDay(); 
+    if (quoteElement && quote) { 
+  
+        quoteElement.textContent = `"${quote.text}" ${quote.author ? `- ${quote.author}` : ''}`;
+    } else {
+        console.error('Failed to display the quote of the day.');
+    }
 };
