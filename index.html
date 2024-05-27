@@ -41,14 +41,12 @@
 
         .special-message .modal-content {
             animation: slideInFromBottom 0.5s ease-in-out;
-        }
+        }    
     </style>
 </head>
 <body>
-
 <div class="header">
     <div class="title">Islands Inventory Catalog</div>
-    
     <div class="buttons-container">
         <button class="btn" onclick="openModal('crops')">Crops</button>
         <button class="btn" onclick="openModal('blocks')">Blocks</button>
@@ -61,7 +59,6 @@
         <button class="btn" onclick="openModal('tools')">Tools</button>
         <button class="btn" onclick="openModal('ore')">Ore</button>
     </div>
-    
     <div class="search-container">
         <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
         <button id="search" class="search-btn">Search</button>
@@ -93,39 +90,5 @@
 </div>
 
 <script src="script.js"></script>
-
-<script>
-    function openSpecialMessageModal() {
-        var specialMessageModal = document.getElementById("specialMessageModal");
-        specialMessageModal.style.display = "block";
-    }
-
-    function closeSpecialMessageModal() {
-        var specialMessageModal = document.getElementById("specialMessageModal");
-        specialMessageModal.style.display = "none";
-    }
-
-    document.getElementById("search").addEventListener("click", function() {
-        var searchTerm = document.getElementById("searchInput").value.toLowerCase();
-        if (searchTerm === "dawginator5000 is the dawg") {
-            openSpecialMessageModal();
-        }
-    });
-
-    // Add event listener for Enter key press
-    document.getElementById("searchInput").addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            document.getElementById("search").click();
-        }
-    });
-
-    // Check if the special message has already been sent
-    var specialMessageSent = localStorage.getItem("specialMessageSent");
-    if (!specialMessageSent) {
-        localStorage.setItem("specialMessageSent", true);
-        openSpecialMessageModal();
-    }
-</script>
-
 </body>
 </html>
