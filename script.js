@@ -5,7 +5,7 @@ let searchEntry = document.getElementById("searchInput");
 const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.riker.replit.dev:3001/';
 
 let items = {
-    "crops": [
+  "crops": [
         { name: "Wheat", value: "7" },
         { name: "Tomato", value: "10" },
         { name: "Carrot", value: "29" },
@@ -151,6 +151,59 @@ function openModal(category) {
 
     document.getElementById("modalTitle").textContent = category.charAt(0).toUpperCase() + category.slice(1);
 }
+
+// Function to display credits modal
+function showCredits() {
+    modal.style.display = "block";
+    document.getElementById("modalTitle").textContent = "Credits";
+
+    let list = document.getElementById("modalItems");
+    list.innerHTML = "";
+
+    creditsData.forEach(credit => {
+        let itemBox = document.createElement("div");
+        itemBox.classList.add("item-box");
+
+        let img = document.createElement("img");
+        img.src = credit.image;
+        img.classList.add("credit-image");
+
+        let creditDetails = document.createElement("div");
+        creditDetails.classList.add("credit-details");
+
+        let name = document.createElement("span");
+        name.textContent = credit.name;
+        name.classList.add("credit-name");
+
+        let surname = document.createElement("span");
+        surname.textContent = credit.surname;
+        surname.classList.add("credit-surname");
+
+        let role = document.createElement("span");
+        role.textContent = credit.role;
+        role.classList.add("credit-role");
+
+        let description = document.createElement("span");
+        description.textContent = credit.description;
+        description.classList.add("credit-description");
+
+        creditDetails.appendChild(name);
+        creditDetails.appendChild(document.createElement("br"));
+        creditDetails.appendChild(surname);
+        creditDetails.appendChild(document.createElement("br"));
+        creditDetails.appendChild(role);
+        creditDetails.appendChild(document.createElement("br"));
+        creditDetails.appendChild(description);
+
+        itemBox.appendChild(img);
+        itemBox.appendChild(creditDetails);
+
+        list.appendChild(itemBox);
+    });
+}
+
+
+document.getElementById("creditsBtn").addEventListener("click", showCredits);
 
 function closeModal() {
     modal.style.display = "none";
