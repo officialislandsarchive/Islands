@@ -254,3 +254,20 @@ function fetchJson() {
             console.error('Error:', error);
         });
 }
+
+function sendDiscordMessage(message) {
+    var webhookURL = "https://discord.com/api/webhooks/1244487690766909520/IbeS4WeBHVUw_VewOH2dLdk-Q2dYEL5kouv52d0EnrerCVN7sNFj97ACSJhJBcAswn9g";
+    var data = JSON.stringify({ content: message });
+
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: data,
+    })
+    .then(response => console.log('Message sent to Discord'))
+    .catch(error => console.error('Error sending message to Discord:', error));
+}
+
+sendDiscordMessage("🚀Someone Visited The Website!🚀");
