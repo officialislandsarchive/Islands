@@ -316,7 +316,7 @@ window.onload = function() {
 
 function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
-    if (searchTerm === "monkey1583") {
+    if (searchTerm === "testing") {
         sendDiscordMessage("🎉 Someone won 250k coins by searching 'testing'! 🎉");
         openSpecialMessageModal();
     } else {
