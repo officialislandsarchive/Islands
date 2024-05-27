@@ -297,21 +297,11 @@ function getRobloxProfileUrl(username) {
 
 document.getElementById("creditsBtn").addEventListener("click", showCredits);
 
-const quotes = [
-    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
-    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
-    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
-    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
-    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
-    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" },
-    { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" }
-];
+const quoteOfTheDay = { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" };
 
 function getQuoteOfTheDay() {
-    const dayOfWeek = new Date().getDay(); 
-    return quotes[dayOfWeek]; 
+    return quoteOfTheDay;
 }
-
 window.onload = function() {
     const quoteElement = document.getElementById('quoteText'); 
     const authorElement = document.getElementById('quoteAuthor');
@@ -322,7 +312,7 @@ window.onload = function() {
     } else {
         console.error('Failed to display the quote of the day.');
     }
-}
+};
 
 function searchAndWin() {
     var searchTerm = document.getElementById("searchInput").value.trim().toLowerCase();
