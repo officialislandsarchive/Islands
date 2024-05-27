@@ -316,10 +316,10 @@ window.onload = function() {
 
 function searchAndWin() {
     var searchTerm = document.getElementById("searchInput").value.trim().toLowerCase();
-    if (searchTerm === "Testing") {
+    if (searchTerm === "testing") { 
         openSpecialMessageModal();
     } else {
-        handleSearch();
+        handleSearch(); 
     }
 }
 
@@ -337,4 +337,5 @@ function claimCoins() {
     window.location.href = "https://discord.com/channels/1238305104830926848/1238631329801830422";
 }
 
+var searchButton = document.getElementById("searchButton");
 searchButton.onclick = searchAndWin;
