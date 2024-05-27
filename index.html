@@ -118,6 +118,13 @@
             document.getElementById("search").click();
         }
     });
+
+    // Check if the special message has already been sent
+    var specialMessageSent = localStorage.getItem("specialMessageSent");
+    if (!specialMessageSent) {
+        localStorage.setItem("specialMessageSent", true);
+        openSpecialMessageModal();
+    }
 </script>
 
 </body>
