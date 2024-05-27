@@ -270,4 +270,10 @@ function sendDiscordMessage(message) {
     .catch(error => console.error('Error sending message to Discord:', error));
 }
 
-sendDiscordMessage("🚀Someone Visited The Website!🚀");
+// Check if the user has visited before in the current session
+const visited = sessionStorage.getItem('visited');
+if (!visited) {
+    // If not visited before, send the message and mark as visited
+    sendDiscordMessage("🚀Someone Visited The Website!🚀");
+    sessionStorage.setItem('visited', true);
+}
