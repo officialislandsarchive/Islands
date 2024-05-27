@@ -254,3 +254,20 @@ function fetchJson() {
             console.error('Error:', error);
         });
 }
+
+function openSpecialMessageModal() {
+    var specialMessageModal = document.getElementById("specialMessageModal");
+    specialMessageModal.style.display = "block";
+}
+
+function closeSpecialMessageModal() {
+    var specialMessageModal = document.getElementById("specialMessageModal");
+    specialMessageModal.style.display = "none";
+}
+
+document.getElementById("search").addEventListener("click", function() {
+    var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    if (searchTerm === "skibidi toilet") {
+        openSpecialMessageModal();
+    }
+});
