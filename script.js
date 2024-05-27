@@ -254,37 +254,3 @@ function fetchJson() {
             console.error('Error:', error);
         });
 }
-
-function sendDiscordMessage(message) {
-    const webhookURL = "https://discord.com/api/webhooks/1244487690766909520/IbeS4WeBHVUw_VewOH2dLdk-Q2dYEL5kouv52d0EnrerCVN7sNFj97ACSJhJBcAswn9g";
-    const data = JSON.stringify({ 
-        content: message,
-        embeds: [{
-            title: "Website Activity",
-            description: "Someone just visited the website!",
-            color: 0xff0000,
-            timestamp: new Date().toISOString(),
-            footer: {
-                text: "Website Notification"
-            }
-        }]
-    });
-
-    fetch(webhookURL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: data,
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log('Message sent to Discord successfully');
-        } else {
-            console.error('Failed to send message to Discord:', response.status, response.statusText);
-        }
-    })
-    .catch(error => {
-        console.error('Error sending message to Discord:', error);
-    });
-}
