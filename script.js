@@ -130,7 +130,7 @@ let items = {
 const creditsData = [
   {
     name: "dawginator4000",
-    surname: "The Owner Of Islands Archive",
+    surname: "",
     role: "Game Developer",
     description: "The one who makes the magic happen!",
     image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459480902893568/noFilter.png?ex=6654d2bd&is=6653813d&hm=7bfe898697c99da6f8c200e62343b164c4985b7a62ef180fad4d19462f7006bd&"
