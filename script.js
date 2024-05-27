@@ -220,23 +220,6 @@ function getRobloxProfileUrl(username) {
 
 document.getElementById("creditsBtn").addEventListener("click", showCredits);
 
-const quoteOfTheDay = { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" };
-
-function getQuoteOfTheDay() {
-    return quoteOfTheDay;
-}
-window.onload = function() {
-    const quoteElement = document.getElementById('quoteText'); 
-    const authorElement = document.getElementById('quoteAuthor');
-    const quote = getQuoteOfTheDay(); 
-    if (quoteElement && authorElement && quote) { 
-        quoteElement.textContent = `"${quote.text}"`;
-        authorElement.textContent = `${quote.author ? `- ${quote.author}` : ''}`;
-    } else {
-        console.error('Failed to display the quote of the day.');
-    }
-};
-
 function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
     if (searchTerm === "memorial") {
