@@ -1,11 +1,14 @@
-let modal = document.getElementById('myModal');
-let searchButton = document.getElementById("search");
-let searchEntry = document.getElementById("searchInput");
+const modal = document.getElementById('myModal');
+const span = document.getElementsByClassName('close')[0];
+const modalTitle = document.getElementById('modalTitle');
+const modalItems = document.getElementById('modalItems');
+const searchButton = document.getElementById("search");
+const searchEntry = document.getElementById("searchInput");
 
 const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.riker.replit.dev:3001/';
 
 let items = {
-  "crops": [
+   "crops": [
         { name: "Wheat", value: "7" },
         { name: "Tomato", value: "10" },
         { name: "Carrot", value: "29" },
@@ -125,145 +128,94 @@ let items = {
 };
 
 const creditsData = [
-    {
-        name: "dawginator4000 | Game Developer",
-        surname: "",
-        role: "Game Developer",
-        description: "The one who makes the magic happen!",
-        image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459480902893568/noFilter.png?ex=6654d2bd&is=6653813d&hm=7bfe898697c99da6f8c200e62343b164c4985b7a62ef180fad4d19462f7006bd&"
-    },
-    {
-        name: "PartlyScientific | Community Server Founder",
-        surname: "",
-        role: "Community Server Founder",
-        description: "The one who keeps the community together!",
-        image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459593259913308/noFilter.png?ex=6654d2d8&is=66538158&hm=f412d58d1768475274a5ed10961719e952db67580211fb3468e5f2e7066ce88e&"
-    },
-    {
-        name: "riskyworld | Community Server Founder",
-        surname: "",
-        role: "Community Server Founder",
-        description: "The one who leads the community!",
-        image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459686461542470/noFilter.png?ex=6654d2ee&is=6653816e&hm=0619b98e5dc10fa6cd1420ee2802ca7a377bf26bb1aa67c084226f0804847e27&"
-    },
-    {
-        name: "Xx_Gamer462 | Website Manager/Developer",
-        surname: "",
-        role: "Website Manager/Developer",
-        description: "The one who manages everything!",
-        image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459862811054222/noFilter.png?ex=6654d318&is=66538198&hm=42616a4e58ce752027cbd83803ffd3db443216cf581d77e7c83a1d92f7413c71&"
-    },
-    {
-        name: "jopkljokez2 | Website Developer",
-        surname: "",
-        role: "Website Developer",
-        description: "The one who adds the magic touch!",
-        image: "https://cdn.discordapp.com/attachments/1091908728992837704/1244474341123559454/noFilter.png?ex=66553e8c&is=6653ed0c&hm=7b373d3915f106afe38e2806416774fa3ab9e19af75ab3a03d6a59bbde04f623&"
-    }
+  {
+    name: "dawginator4000",
+    surname: "| Dawg",
+    role: "Game Developer",
+    description: "The one who makes the magic happen!",
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459480902893568/noFilter.png?ex=6654d2bd&is=6653813d&hm=7bfe898697c99da6f8c200e62343b164c4985b7a62ef180fad4d19462f7006bd&"
+  },
+  {
+    name: "PartlyScientific",
+    surname: "| Science",
+    role: "Community Server Founder",
+    description: "The one who keeps the community together!",
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459593259913308/noFilter.png?ex=6654d2d8&is=66538158&hm=f412d58d1768475274a5ed10961719e952db67580211fb3468e5f2e7066ce88e&"
+  },
+  {
+    name: "riskyworld",
+    surname: "| Risky",
+    role: "Community Server Founder",
+    description: "The one who leads the community!",
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459686461542470/noFilter.png?ex=6654d2ee&is=6653816e&hm=0619b98e5dc10fa6cd1420ee2802ca7a377bf26bb1aa67c084226f0804847e27&"
+  },
+  {
+    name: "Xx_Gamer462",
+    surname: "| Gamer",
+    role: "Website Manager/Developer",
+    description: "The one who manages everything!",
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459862811054222/noFilter.png?ex=6654d318&is=66538198&hm=42616a4e58ce752027cbd83803ffd3db443216cf581d77e7c83a1d92f7413c71&"
+  },
+  {
+    name: "jopkljokez2",
+    surname: "| Joker",
+    role: "Website Developer",
+    description: "The one who adds the magic touch!",
+    image: "https://cdn.discordapp.com/attachments/1091908728992837704/1244474341123559454/noFilter.png?ex=66553e8c&is=6653ed0c&hm=7b373d3915f106afe38e2806416774fa3ab9e19af75ab3a03d6a59bbde04f623&"
+  }
 ];
 
 fetchJson();
 
+document.getElementById("creditsBtn").addEventListener("click", showCredits);
+span.onclick = closeModal;
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+searchButton.onclick = handleSearch;
+
 function openModal(category) {
     modal.style.display = "block";
-
-    let list = document.getElementById("modalItems");
-    list.innerHTML = "";
-
-    items[category].forEach(function(item) {
-        var itemBox = document.createElement("div");
-        itemBox.classList.add("item-box");
-
-        let itemName = document.createElement("span");
-        itemName.classList.add("item-name");
-        itemName.textContent = item.name;
-
-        let coinValue = document.createElement("span");
-        coinValue.classList.add("coin-value");
-        coinValue.textContent = "Coin Value: " + item.value;
-
-        itemBox.appendChild(itemName);
-        itemBox.appendChild(coinValue);
-        list.appendChild(itemBox);
-    });
-
-    document.getElementById("modalTitle").textContent = category.charAt(0).toUpperCase() + category.slice(1);
+    modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+    modalItems.innerHTML = items[category].map(item => `
+        <div class="item-box">
+            <span class="item-name">${item.name}</span>
+            <span class="coin-value">Coin Value: ${item.value}</span>
+        </div>
+    `).join('');
 }
 
-// Function to display credits modal
 function showCredits() {
     modal.style.display = "block";
-    document.getElementById("modalTitle").textContent = "Credits";
-
-    let list = document.getElementById("modalItems");
-    list.innerHTML = "";
-
-    creditsData.forEach(credit => {
-        let itemBox = document.createElement("div");
-        itemBox.classList.add("item-box");
-
-        let img = document.createElement("img");
-        img.src = credit.image;
-        img.classList.add("credit-image");
-
-        let creditDetails = document.createElement("div");
-        creditDetails.classList.add("credit-details");
-
-        let name = document.createElement("span");
-        name.textContent = credit.name;
-        name.classList.add("credit-name");
-
-        let surname = document.createElement("span");
-        surname.textContent = credit.surname;
-        surname.classList.add("credit-surname");
-
-        let role = document.createElement("span");
-        role.textContent = credit.role;
-        role.classList.add("credit-role");
-
-        let description = document.createElement("span");
-        description.textContent = credit.description;
-        description.classList.add("credit-description");
-
-        creditDetails.appendChild(name);
-        creditDetails.appendChild(document.createElement("br"));
-        creditDetails.appendChild(surname);
-        creditDetails.appendChild(document.createElement("br"));
-        creditDetails.appendChild(role);
-        creditDetails.appendChild(document.createElement("br"));
-        creditDetails.appendChild(description);
-
-        itemBox.appendChild(img);
-        itemBox.appendChild(creditDetails);
-
-        list.appendChild(itemBox);
-    });
+    modalTitle.textContent = "Credits";
+    modalItems.innerHTML = creditsData.map(person => `
+        <div class="item-box">
+            <img src="${person.image}" alt="${person.name}" class="credit-image">
+            <div class="credit-details">
+                <div class="credit-name">${person.name} ${person.surname}</div>
+                <div class="credit-role">${person.role}</div>
+                <div class="credit-description">${person.description}</div>
+            </div>
+        </div>
+    `).join('');
 }
-
-document.getElementById("creditsBtn").addEventListener("click",showCredits);
 
 function closeModal() {
     modal.style.display = "none";
 }
 
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
 function handleSearch() {
-    let keyword = searchEntry.value.toLowerCase();
-    let results = [];
+    const keyword = searchEntry.value.toLowerCase();
+    const results = [];
 
-    for (let key in items) {
-        items[key].forEach(function(x) {
-            x = x.name
-    
-            if (x.toLowerCase().includes(keyword)) {
-                results.push({name: x, value: "5"});
+    for (const key in items) {
+        items[key].forEach(item => {
+            if (item.name.toLowerCase().includes(keyword)) {
+                results.push(item);
             }
-        })
+        });
     }
 
     openModelFromArray(results);
@@ -271,76 +223,34 @@ function handleSearch() {
 }
 
 function openModelFromArray(array) {
-
     modal.style.display = "block";
-
-    let list = document.getElementById("modalItems");
-    list.innerHTML = "";
-
-    array.forEach(function(item) {
-        let itemBox = document.createElement("div");
-        itemBox.classList.add("item-box");
-    
-        let itemName = document.createElement("span");
-        itemName.classList.add("item-name");
-        itemName.textContent = item.name;
-    
-        let coinValue = document.createElement("span");
-        coinValue.classList.add("coin-value");
-        coinValue.textContent = "Coin Value: " + getCoinValue(item.name);
-    
-        itemBox.appendChild(itemName);
-        itemBox.appendChild(coinValue);
-        list.appendChild(itemBox);
-    })
-
-    document.getElementById("modalTitle").textContent = "Results";
+    modalTitle.textContent = "Results";
+    modalItems.innerHTML = array.map(item => `
+        <div class="item-box">
+            <span class="item-name">${item.name}</span>
+            <span class="coin-value">Coin Value: ${item.value}</span>
+        </div>
+    `).join('');
 }
-
-function getCoinValue(name) {
-    for (let key in items) {
-
-        items[key].forEach(function(val) {
-            if (val.name.toLowerCase() == name.toLowerCase()) {
-
-                return val.value;
-            }
-        })
-
-        for (let i = 0; i < items[key].length; i++) {
-            val = items[key][i];
-
-            if (val.name == name) {
-                return val.value;
-            }
-        }
-    }
-}
-
-searchButton.onclick = handleSearch
 
 function updateJson(data) {
-  console.log(data)
-
-    for (let key in items) {
-        for (let key2 in items[key]) {
-            let priceVal = data[items[key][key2].name]
-            items[key][key2].value = priceVal
-        }
+    for (const key in items) {
+        items[key].forEach(item => {
+            if (data[item.name] !== undefined) {
+                item.value = data[item.name];
+            }
+        });
     }
 }
 
 function fetchJson() {
-
     fetch(serverUrl)
-    .then(response => response.text())
-    .then(data => {
-        let Jsondata = JSON.parse(data)
-        updateJson(Jsondata)
-        console.log(Jsondata)
-    })
-    .catch(error => {
-        // Log any errors
-        console.log('Error:', error);
-    });
+        .then(response => response.json())
+        .then(data => {
+            updateJson(data);
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
