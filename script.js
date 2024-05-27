@@ -128,47 +128,44 @@ let items = {
 };
 
 const creditsData = [
-    {
-        name: "dawginator4000",
-        surname: "",
-        role: "Game Developer",
-        description: "The one who makes the magic happen!",
-        image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459480902893568/noFilter.png?ex=6654d2bd&is=6653813d&hm=7bfe898697c99da6f8c200e62343b164c4985b7a62ef180fad4d19462f7006bd&",
-        robloxProfile: "https://www.roblox.com/users/5847760687/profile"
-    },
-    {
-        name: "PartlyScientific",
-        surname: "",
-        role: "Community Server Founder",
-        description: "The one who keeps the community together!",
-        image: "https://cdn.discordapp.com/attachments/1239379916257230869/1244761242845974589/rIdK1DX.png?ex=665649be&is=6654f83e&hm=d03383a7029f6f30479fc28493793371b633221eb5b659cdd516e840d8c86dac&",
-        robloxProfile: "https://www.roblox.com/users/1647767202/profile"
-    },
-    {
-        name: "riskyworld",
-        surname: "",
-        role: "Community Server Founder",
-        description: "The one who leads the community!",
-        image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459686461542470/noFilter.png?ex=6654d2ee&is=6653816e&hm=0619b98e5dc10fa6cd1420ee2802ca7a377bf26bb1aa67c084226f0804847e27&",
-        robloxProfile: "https://www.roblox.com/users/137462357/profile"
-    },
-    {
-        name: "Xx_Gamer462",
-        surname: "",
-        role: "Website Manager/Developer",
-        description: "The one who manages everything!",
-        image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459862811054222/noFilter.png?ex=6654d318&is=66538198&hm=42616a4e58ce752027cbd83803ffd3db443216cf581d77e7c83a1d92f7413c71&",
-        robloxProfile: "https://www.roblox.com/users/3823651589/profile"
-    },
-    {
-        name: "jopkljokez2",
-        surname: "",
-        role: "Website Developer",
-        description: "The one who adds the magic touch!",
-        image: "https://cdn.discordapp.com/attachments/1091908728992837704/1244474341123559454/noFilter.png?ex=66553e8c&is=6653ed0c&hm=7b373d3915f106afe38e2806416774fa3ab9e19af75ab3a03d6a59bbde04f623&",
-        robloxProfile: "https://www.roblox.com/users/1044649449/profile"
-    },
+  {
+    name: "dawginator4000",
+    surname: "",
+    role: "Game Developer",
+    description: "The one who makes the magic happen!",
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459480902893568/noFilter.png?ex=6654d2bd&is=6653813d&hm=7bfe898697c99da6f8c200e62343b164c4985b7a62ef180fad4d19462f7006bd&"
+  },
+  {
+    name: "PartlyScientific",
+    surname: "",
+    role: "Community Server Founder",
+    description: "The one who keeps the community together!",
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459593259913308/noFilter.png?ex=6654d2d8&is=66538158&hm=f412d58d1768475274a5ed10961719e952db67580211fb3468e5f2e7066ce88e&"
+  },
+  {
+    name: "riskyworld",
+    surname: "",
+    role: "Community Server Founder",
+    description: "The one who leads the community!",
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459686461542470/noFilter.png?ex=6654d2ee&is=6653816e&hm=0619b98e5dc10fa6cd1420ee2802ca7a377bf26bb1aa67c084226f0804847e27&"
+  },
+  {
+    name: "Xx_Gamer462",
+    surname: "",
+    role: "Website Manager/Developer",
+    description: "The one who manages everything!",
+    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459862811054222/noFilter.png?ex=6654d318&is=66538198&hm=42616a4e58ce752027cbd83803ffd3db443216cf581d77e7c83a1d92f7413c71&"
+  },
+  {
+    name: "jopkljokez2",
+    surname: "",
+    role: "Website Developer",
+    description: "The one who adds the magic touch!",
+    image: "https://cdn.discordapp.com/attachments/1091908728992837704/1244474341123559454/noFilter.png?ex=66553e8c&is=6653ed0c&hm=7b373d3915f106afe38e2806416774fa3ab9e19af75ab3a03d6a59bbde04f623&"
+  }
 ];
+
+fetchJson();
 
 document.getElementById("creditsBtn").addEventListener("click", showCredits);
 span.onclick = closeModal;
@@ -194,7 +191,7 @@ function showCredits() {
     modal.style.display = "block";
     modalTitle.textContent = "Credits";
     modalItems.innerHTML = creditsData.map(person => `
-        <div class="item-box" onclick="window.open('${person.robloxProfile}', '_blank')">
+        <div class="item-box">
             <img src="${person.image}" alt="${person.name}" class="credit-image">
             <div class="credit-details">
                 <div class="credit-name">${person.name} ${person.surname}</div>
@@ -208,6 +205,7 @@ function showCredits() {
 function closeModal() {
     modal.style.display = "none";
 }
+
 function handleSearch() {
     const keyword = searchEntry.value.toLowerCase();
     const results = [];
