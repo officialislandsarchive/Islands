@@ -5,7 +5,7 @@ const modalItems = document.getElementById('modalItems');
 const searchButton = document.getElementById("search");
 const searchEntry = document.getElementById("searchInput");
 
-const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.riker.replit.dev:3002/';
+const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.riker.replit.dev:3001/';
 
 let items = {
    "crops": [
@@ -270,88 +270,4 @@ function sendDiscordMessage(message) {
     .catch(error => console.error('Error sending message to Discord:', error));
 }
 
-const visited = sessionStorage.getItem('visited');
-if (!visited) {
-    sendDiscordMessage("🚀Someone Visited The Official Website!🚀");
-    sessionStorage.setItem('visited', true);
-}
-
-function showCredits() {
-    modal.style.display = "block";
-    modalTitle.textContent = "Credits";
-    modalItems.innerHTML = creditsData.map(person => `
-        <a href="${getRobloxProfileUrl(person.name)}" target="_blank" class="credit-link">
-            <div class="item-box">
-                <img src="${person.image}" alt="${person.name}" class="credit-image">
-                <div class="credit-details">
-                    <div class="credit-name">${person.name} ${person.surname}</div>
-                    <div class="credit-role">${person.role}</div>
-                    <div class="credit-description">${person.description}</div>
-                </div>
-            </div>
-        </a>
-    `).join('');
-}
-
-function getRobloxProfileUrl(username) {
-    return `https://www.roblox.com/users/${username}/profile`;
-}
-
-document.getElementById("creditsBtn").addEventListener("click", showCredits);
-const quoteOfTheDay = { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" };
-
-function getQuoteOfTheDay() {
-    return quoteOfTheDay;
-}
-window.onload = function() {
-    const quoteElement = document.getElementById('quoteText'); 
-    const authorElement = document.getElementById('quoteAuthor');
-    const quote = getQuoteOfTheDay(); 
-    if (quoteElement && authorElement && quote) { 
-        quoteElement.textContent = `"${quote.text}"`;
-        authorElement.textContent = `${quote.author ? `- ${quote.author}` : ''}`;
-    } else {
-        console.error('Failed to display the quote of the day.');
-    }
-};
-
-function searchAndWin() {
-    var searchTerm = searchInput.value.trim().toLowerCase();
-    if (searchTerm === "memorial") {
-        sendDiscordMessage("🎉 Someone won 250k coins by searching 'memorial'! 🎉");
-        openSpecialMessageModal();
-    } else {
-        handleSearch();
-    }
-}
-
-function openSpecialMessageModal() {
-    var modal = document.getElementById("specialMessageModal");
-    modal.style.display = "block";
-}
-
-function closeSpecialMessageModal() {
-    var modal = document.getElementById("specialMessageModal");
-    modal.style.display = "none";
-}
-
-function claimCoins() {
-    window.location.href = "https://discord.com/channels/1238305104830926848/1238631329801830422";
-}
-
-searchButton.onclick = searchAndWin;
-
-function sendDiscordMessage(message) {
-    var webhookURL = "https://discord.com/api/webhooks/1244492846698860634/HQKLhGISvncGm4IuNNUiWbP8GZVsm6n2FPEl8Wuu_bqj-uu-7T8Mx_ys-djKFvPBGmH1";
-    var data = JSON.stringify({ content: message });
-
-    fetch(webhookURL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: data,
-    })
-    .then(response => console.log('Message sent to Discord'))
-    .catch(error => console.error('Error sending message to Discord:', error));
-}
+sendDiscordMessage("🚀Someone Visited The Website!🚀");
