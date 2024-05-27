@@ -129,7 +129,7 @@ let items = {
 
 const creditsData = [
   {
-    name: "dawginator4000",
+   name: "dawginator4000",
     surname: "",
     role: "Game Developer",
     description: "The one who makes the magic happen!",
@@ -140,7 +140,7 @@ const creditsData = [
     surname: "",
     role: "Community Server Founder",
     description: "The one who keeps the community together!",
-    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459593259913308/noFilter.png?ex=6654d2d8&is=66538158&hm=f412d58d1768475274a5ed10961719e952db67580211fb3468e5f2e7066ce88e&"
+    image: "https://cdn.discordapp.com/attachments/1106393746062463067/1244762583941255178/OIP.png?ex=66564afe&is=6654f97e&hm=b8677f73171f3d00f34c4083569ac8b68aecaa752564c2b79c4036366ce9d5ab&"
   },
   {
     name: "riskyworld",
@@ -162,10 +162,8 @@ const creditsData = [
     role: "Website Developer",
     description: "The one who adds the magic touch!",
     image: "https://cdn.discordapp.com/attachments/1091908728992837704/1244474341123559454/noFilter.png?ex=66553e8c&is=6653ed0c&hm=7b373d3915f106afe38e2806416774fa3ab9e19af75ab3a03d6a59bbde04f623&"
-  }
+  },
 ];
-
-fetchJson();
 
 document.getElementById("creditsBtn").addEventListener("click", showCredits);
 span.onclick = closeModal;
@@ -270,4 +268,89 @@ function sendDiscordMessage(message) {
     .catch(error => console.error('Error sending message to Discord:', error));
 }
 
-sendDiscordMessage("🚀Someone Visited The Website!🚀");
+const visited = sessionStorage.getItem('visited');
+if (!visited) {
+    sendDiscordMessage("🚀Someone Visited The Official Website!🚀");
+    sessionStorage.setItem('visited', true);
+}
+
+function showCredits() {
+    modal.style.display = "block";
+    modalTitle.textContent = "Credits";
+    modalItems.innerHTML = creditsData.map(person => `
+        <a href="${getRobloxProfileUrl(person.name)}" target="_blank" class="credit-link">
+            <div class="item-box">
+                <img src="${person.image}" alt="${person.name}" class="credit-image">
+                <div class="credit-details">
+                    <div class="credit-name">${person.name} ${person.surname}</div>
+                    <div class="credit-role">${person.role}</div>
+                    <div class="credit-description">${person.description}</div>
+                </div>
+            </div>
+        </a>
+    `).join('');
+}
+
+function getRobloxProfileUrl(username) {
+    return `https://www.roblox.com/users/${username}/profile`;
+}
+
+document.getElementById("creditsBtn").addEventListener("click", showCredits);
+
+const quoteOfTheDay = { text: "As America celebrates Memorial Day, we pay tribute to those who have given their lives in our nation's wars.", author: "" };
+
+function getQuoteOfTheDay() {
+    return quoteOfTheDay;
+}
+window.onload = function() {
+    const quoteElement = document.getElementById('quoteText'); 
+    const authorElement = document.getElementById('quoteAuthor');
+    const quote = getQuoteOfTheDay(); 
+    if (quoteElement && authorElement && quote) { 
+        quoteElement.textContent = `"${quote.text}"`;
+        authorElement.textContent = `${quote.author ? `- ${quote.author}` : ''}`;
+    } else {
+        console.error('Failed to display the quote of the day.');
+    }
+};
+
+function searchAndWin() {
+    var searchTerm = searchInput.value.trim().toLowerCase();
+    if (searchTerm === "memorial") {
+        sendDiscordMessage("🎉 Someone won 250k coins by searching 'memorial'! 🎉");
+        openSpecialMessageModal();
+    } else {
+        handleSearch();
+    }
+}
+
+function openSpecialMessageModal() {
+    var modal = document.getElementById("specialMessageModal");
+    modal.style.display = "block";
+}
+
+function closeSpecialMessageModal() {
+    var modal = document.getElementById("specialMessageModal");
+    modal.style.display = "none";
+}
+
+function claimCoins() {
+    window.location.href = "https://discord.com/channels/1238305104830926848/1238631329801830422";
+}
+
+searchButton.onclick = searchAndWin;
+
+function sendDiscordMessage(message) {
+    var webhookURL = "https://discord.com/api/webhooks/1244492846698860634/HQKLhGISvncGm4IuNNUiWbP8GZVsm6n2FPEl8Wuu_bqj-uu-7T8Mx_ys-djKFvPBGmH1";
+    var data = JSON.stringify({ content: message });
+
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: data,
+    })
+    .then(response => console.log('Message sent to Discord'))
+    .catch(error => console.error('Error sending message to Discord:', error));
+}
