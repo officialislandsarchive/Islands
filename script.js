@@ -323,24 +323,3 @@ window.onload = function() {
         console.error('Failed to display the quote of the day.');
     }
 }
-
-function searchAndWin() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase();
-    if (searchInput === "Nigger") { 
-        openSpecialMessageModal(); 
-    }
-}
-
-function openSpecialMessageModal() {
-    const modal = document.getElementById('specialMessageModal');
-    if (modal) {
-        modal.style.display = "block";
-    }
-}
-
-function closeSpecialMessageModal() {
-    const modal = document.getElementById('specialMessageModal');
-    if (modal) {
-        modal.style.display = "none";
-    }
-}
