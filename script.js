@@ -270,7 +270,7 @@ function sendDiscordMessage(message) {
 
 const visited = sessionStorage.getItem('visited');
 if (!visited) {
-    sendDiscordMessage("🚀Someone Visited The Website!🚀");
+    sendDiscordMessage("🚀Someone Visited The Official Website!🚀");
     sessionStorage.setItem('visited', true);
 }
 
