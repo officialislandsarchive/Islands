@@ -315,6 +315,16 @@ function searchAndWin() {
     }
 }
 
+function searchAndWin() {
+    var searchTerm = searchInput.value.trim().toLowerCase();
+    if (searchTerm === "ISLANDS ARCHIVE") {
+        sendDiscordMessage("Someone Is Trying To Cheat");
+        openSpecialMessageModal();
+    } else {
+        handleSearch();
+    }
+}
+
 function openSpecialMessageModal() {
     var modal = document.getElementById("specialMessageModal");
     modal.style.display = "block";
