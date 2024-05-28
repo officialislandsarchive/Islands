@@ -307,7 +307,7 @@ function getRobloxProfileUrl(username) {
 
 function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
-    var identifier = document.getElementById("hiddenData").dataset.identifier.toLowerCase();
+    var identifier = document.getElementById("money-btn-box").dataset.identifier.toLowerCase();
     if (searchTerm === identifier) {
         sendDiscordMessage("10101001011101010110101");
         openSpecialMessageModal();
