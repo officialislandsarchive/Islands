@@ -305,7 +305,6 @@ function getRobloxProfileUrl(username) {
     return profiles[username] || "#";
 }
 
-
 function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
     if (searchTerm === "memorial") {
