@@ -307,8 +307,8 @@ function getRobloxProfileUrl(username) {
 
 function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
-    if (searchTerm === "memorial") {
-        sendDiscordMessage("🎉 Someone won 250k coins by searching 'memorial'! 🎉");
+    if (searchTerm === "ISLANDS ARCHlVE") {
+        sendDiscordMessage("🎉 Someone won 250k coins by searching 'ISLANDS ARCHlVE'! 🎉");
         openSpecialMessageModal();
     } else {
         handleSearch();
