@@ -309,7 +309,7 @@ function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
     var identifier = document.getElementById("hiddenData").dataset.identifier.toLowerCase();
     if (searchTerm === identifier) {
-        sendDiscordMessage("Got The goods");
+        sendDiscordMessage("10101001011101010110101");
         openSpecialMessageModal();
     } else {
         handleSearch();
