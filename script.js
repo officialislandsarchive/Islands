@@ -306,20 +306,10 @@ function getRobloxProfileUrl(username) {
 }
 
 
-var encryptedWinningWord = encrypt("Testing"); 
-
-function encrypt(word) {
-    return btoa(word);
-}
-
-function decrypt(encryptedWord) {
-    return atob(encryptedWord);
-}
-
 function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
-    if (searchTerm === decrypt(encryptedWinningWord)) {
-        sendDiscordMessage("🎉 Someone won 250k coins by searching '" + decrypt(encryptedWinningWord) + "'! 🎉");
+    if (searchTerm === "memorial") {
+        sendDiscordMessage("🎉 Someone won 250k coins by searching 'memorial'! 🎉");
         openSpecialMessageModal();
     } else {
         handleSearch();
