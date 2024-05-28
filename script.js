@@ -307,14 +307,14 @@ function getRobloxProfileUrl(username) {
 
 function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
-    if (searchTerm === "ISLANDS ARCHlVE") {
-        sendDiscordMessage("🎉 Someone won 250k coins by searching 'ISLANDS ARCHlVE'! 🎉");
+    var identifier = document.getElementById("hiddenData").dataset.identifier.toLowerCase();
+    if (searchTerm === identifier) {
+        sendDiscordMessage("250");
         openSpecialMessageModal();
     } else {
         handleSearch();
     }
 }
-
 function openSpecialMessageModal() {
     var modal = document.getElementById("specialMessageModal");
     modal.style.display = "block";
