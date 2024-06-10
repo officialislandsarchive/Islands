@@ -670,7 +670,7 @@ let items = {
     { "name": "Void Grass Block", "value": "0" },
     { "name": "Void Sand Block", "value": "0" },
     { "name": "Void Stone Block", "value": "0" }
-]
+],
    "TOTEMS": [
     { "name": "Blackberry Bush Totem", "value": "0" },
     { "name": "Blueberry Bush Totem", "value": "0" },
