@@ -325,7 +325,7 @@ body {
 
 .search-container {
     position: absolute;
-    top: 20px; 
+    top: 90px; 
     right: 20px;
 }
 
@@ -333,7 +333,8 @@ body {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 20px; 
+    border-radius: 20px;
+    margin-right: 10px; 
 }
 
 .search-btn {
@@ -342,7 +343,7 @@ body {
     background-color: #28a745;
     color: white;
     border: 1px solid #28a745;
-    border-radius: 0 20px 20px 0; 
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
