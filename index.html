@@ -25,19 +25,19 @@
             <button class="btn" onclick="openModal('MISC')">MISC</button>            
         </div>
     </div>
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
+        <button id="search" class="search-btn" onclick="searchAndWin()">Search</button>
+    </div>
     
     <div class="title-container">
         <h1>Islands Price Guide</h1>
-        <p class="note" style="font-size: 14px;">Price guide is limited to top traded items only.</p>
+        <p class="note" style="font-size: 14px;">Note: This is a community-maintained guide.</p>
     </div>
-    
-    <div class="search-container">
-        <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
-        <button id="search" class="search-btn">Search</button>
-    </div>
-    
+
     <div class="price-update">
         <a href="https://officialislandsarchive.github.io/Update-Prices/" class="btn" target="_blank">Help Update Prices Here!</a>
+        <div id="money-btn-box" data-identifier="230b97d62390767926ej932e790623j9e42379602e"></div>
     </div>
 
     <div id="myModal" class="modal">
@@ -47,14 +47,36 @@
             <div id="modalItems"></div>
         </div>
     </div>
-    
+
+    <div id="specialMessageModal" class="modal">
+        <div class="modal-content special-message">
+            <span class="close" onclick="closeSpecialMessageModal()">&times;</span>
+            <h2>🎉 Congratulations! 🎉</h2>
+            <p>You won the 250k coins!</p>
+            <button onclick="claimCoins()" class="claim-btn">Click here to claim</button>
+        </div>
+    </div>
+
     <div class="credits-btn-container">
         <button id="creditsBtn" class="btn credits-btn">Credits</button>
     </div>
-    
+
     <div class="price-guide-info">
-        <p>Price guide is maintained by sellers in the community.</p>
+        <p>Price guide is maintained by sellers in the community. Join the Discord Server: </p>
         <p>Price Guide platform created by Josh (Josh does not set prices.)</p>
     </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                if (document.activeElement.id === "searchInput") {
+                    searchAndWin();
+                } else {
+                    console.log("Enter pressed in another input field.");
+                }
+            }
+        });
+    </script>
 </body>
 </html>
