@@ -897,29 +897,3 @@ function getRobloxProfileUrl(username) {
 
     return profiles[username] || "#";
 }
-
-function searchAndWin() {
-    var searchTerm = searchInput.value.trim().toLowerCase();
-    if (searchTerm === "Nigger") {
-        sendDiscordMessage("Ah...");
-        openSpecialMessageModal();
-    } else {
-        handleSearch();
-    }
-}
-
-function openSpecialMessageModal() {
-    var modal = document.getElementById("specialMessageModal");
-    modal.style.display = "block";
-}
-
-function closeSpecialMessageModal() {
-    var modal = document.getElementById("specialMessageModal");
-    modal.style.display = "none";
-}
-
-function claimCoins() {
-    window.location.href = "https://discord.com/channels/1238305104830926848/1238631329801830422";
-}
-
-searchButton.onclick = searchAndWin;
