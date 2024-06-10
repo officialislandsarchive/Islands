@@ -898,23 +898,24 @@ function getRobloxProfileUrl(username) {
     return profiles[username] || "#";
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const searchTerm = "Word";
-
-    function searchAndWin() {
-        var searchTermInput = searchInput.value.trim().toLowerCase();
-        if (searchTermInput === searchTerm) {
-            alert("Hey! You're cool for guessing the secret word!");
-            openSpecialMessageModal();
-        } else {
-            handleSearch();
-        }
+function searchAndWin() {
+    var searchTerm = searchInput.value.trim().toLowerCase();
+    if (searchTerm === "Word") {
+        sendDiscordMessage("");
+        openSpecialMessageModal();
+    } else {
+        handleSearch();
     }
+}
 
-    function openSpecialMessageModal() {
-        var modal = document.getElementById("specialMessageModal");
-        modal.style.display = "block";
-    }
+function openSpecialMessageModal() {
+    var modal = document.getElementById("specialMessageModal");
+    modal.style.display = "block";
+}
 
-    searchButton.onclick = searchAndWin;
-});
+function closeSpecialMessageModal() {
+    var modal = document.getElementById("specialMessageModal");
+    modal.style.display = "none";
+}
+
+searchButton.onclick = searchAndWin;
