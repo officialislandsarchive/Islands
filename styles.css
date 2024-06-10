@@ -326,8 +326,8 @@ body {
 }
 
 .search-container {
-    position: fixed;
-    bottom: 20px; /* Adjusted to bottom */
+    position: absolute;
+    top: 20px; 
     right: 20px;
 }
 
