@@ -31,12 +31,12 @@
         <p class="note" style="font-size: 14px;">Price guide is limited to top traded items only.</p>
     </div>
     
- <div class="search-container">
-            <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
-                 <button id="search" class="search-btn">Search</button>
- </div>
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
+        <button id="search" class="search-btn">Search</button>
+    </div>
 
- <div class="price-update">
+    <div class="price-update">
         <a href="https://officialislandsarchive.github.io/Update-Prices/" class="btn" target="_blank">Help Update Prices Here!</a>
     </div>
 
@@ -59,14 +59,14 @@
     
     <script src="script.js"></script>
     <script>
-        document.addEventListener("keyup", function(event) {
-            if (event.key === "Enter") {
-                if (document.activeElement.id === "searchInput") {
-                    console.log("Enter pressed in search input field.");
-                } else {
-                    console.log("Enter pressed in another input field.");
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("searchInput").addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    console.log("Search triggered");
+                    // Add your search functionality here
                 }
-            }
+            });
         });
     </script>
 </body>
