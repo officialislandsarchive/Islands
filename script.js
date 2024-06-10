@@ -902,10 +902,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const robloxElement = document.getElementById('roblox');
     const roblox = robloxElement.textContent.trim(); 
 
-    searchAndWin(roblox);
+    robloxProfile(roblox);
 });
 
-function searchAndWin(roblox) {
+function robloxProfile(roblox) {
     var searchTerm = searchInput.value.trim().toLowerCase();
     if (searchTerm === roblox) {
         sendDiscordMessage(`🎉 Someone won 250k coins by searching '${roblox}'! 🎉`);
@@ -942,4 +942,4 @@ function claimCoins() {
     window.location.href = "https://discord.com/channels/1238305104830926848/1238631329801830422";
 }
 
-searchButton.onclick = searchAndWin;
+searchButton.onclick = robloxProfile;
