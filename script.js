@@ -8,7 +8,10 @@ const searchEntry = document.getElementById("searchInput");
 const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.riker.replit.dev:3001/';
 
 let items = {
-    "all": [],
+    "all": [
+        { name: "Item 1 - all", value: "10" },
+        { name: "Item 2 - all", value: "20" }, 
+    ],
     "combat": [
         { name: "Item 1 - Combat", value: "10" },
         { name: "Item 2 - Combat", value: "20" },
