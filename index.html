@@ -7,9 +7,14 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div class="header">
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
+        <button id="search" class="search-btn" onclick="searchAndWin()">Search</button>
+    </div>
+
+    <div class="header-left">
         <div class="buttons-container">
-            <button class="btn" onclick="openModal('ALL')">ALL</button>
+ 	    <button class="btn" onclick="openModal('ALL')">ALL</button>
             <button class="btn" onclick="openModal('COMBAT')">COMBAT</button>
             <button class="btn" onclick="openModal('MINERAL')">MINERAL</button>
             <button class="btn" onclick="openModal('DECOR')">DECOR</button>
@@ -25,18 +30,13 @@
             <button class="btn" onclick="openModal('MISC')">MISC</button>            
         </div>
     </div>
-
-    <div class="search-container">
-        <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
-        <button id="search" class="search-btn" onclick="searchAndWin()">Search</button>
-    </div>
     
     <div class="title-container">
         <h1>Islands Inventory Catalog</h1>
         <p class="note">Note: This is a community-maintained guide.</p>
     </div>
 
-    <div class="price-update">
+ <div class="price-update">
         <a href="https://officialislandsarchive.github.io/Update-Prices/" class="btn" target="_blank">Help Update Prices Here!</a>
         <div id="money-btn-box" data-identifier="230b97d62390767926ej932e790623j9e42379602e"></div>
     </div>
