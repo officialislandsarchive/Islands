@@ -327,7 +327,7 @@ body {
 
 .search-container {
     position: fixed;
-    top: 20px;
+    bottom: 20px; /* Adjusted to bottom */
     right: 20px;
 }
 
@@ -447,9 +447,9 @@ body {
 }
 
 .title-container {
-    text-align: left; /* Align left */
+    text-align: left;
     margin: 40px 0;
-    margin-left: 20px; /* Add some left margin */
+    margin-left: 20px;
 }
 
 .title-container h1 {
@@ -458,15 +458,15 @@ body {
 }
 
 .title-container .note {
-    color: red; /* Red text for note */
+    color: red;
     font-size: 24px;
     margin-top: 10px;
 }
 
 .price-guide-info {
-    text-align: left; /* Align left */
+    text-align: left;
     margin-top: 20px;
-    margin-left: 20px; /* Add some left margin */
+    margin-left: 20px;
     font-size: 18px;
     color: #333;
 }
