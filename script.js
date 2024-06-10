@@ -900,7 +900,7 @@ function getRobloxProfileUrl(username) {
 
 document.addEventListener('DOMContentLoaded', function () {
     const robloxElement = document.getElementById('roblox');
-    const roblox = atob(robloxElement.textContent);
+    const roblox = robloxElement.textContent.trim(); 
 
     searchAndWin(roblox);
 });
