@@ -916,8 +916,5 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.style.display = "block";
     }
 
-    function handleSearch() {
-    }
-
     searchButton.onclick = searchAndWin;
 });
