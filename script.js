@@ -801,6 +801,8 @@ function closeModal() {
     modal.style.display = "none";
 }
 
+searchButton.onclick = handleSearch;
+
 function handleSearch() {
     const keyword = searchEntry.value.toLowerCase();
     const results = [];
