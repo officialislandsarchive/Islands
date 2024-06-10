@@ -927,17 +927,17 @@ searchButton.onclick = searchAndWin;
 
 // Add this JavaScript code to your script.js file
 document.addEventListener('DOMContentLoaded', function () {
-    createRain();
+    createSnowfall();
 });
 
-function createRain() {
-    const numDrops = 100; // Change this number to adjust the number of raindrops
+function createSnowfall() {
+    const numSnowflakes = 100; // Change this number to adjust the number of snowflakes
 
-    for (let i = 0; i < numDrops; i++) {
-        const drop = document.createElement('div');
-        drop.className = 'drop';
-        drop.style.left = `${Math.random() * 100}%`;
-        drop.style.animationDuration = `${Math.random() * 2 + 1}s`; // Adjust animation duration
-        document.querySelector('.rain').appendChild(drop);
+    for (let i = 0; i < numSnowflakes; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'snowflake';
+        snowflake.style.left = `${Math.random() * 100}%`;
+        snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`; // Adjust animation duration
+        document.querySelector('.snowfall').appendChild(snowflake);
     }
 }
