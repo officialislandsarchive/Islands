@@ -899,42 +899,25 @@ function getRobloxProfileUrl(username) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const searchTermElement = document.getElementById('search-term');
-    const searchTerm = searchTermElement.textContent.trim().toLowerCase();
+    const searchTerm = "Word";
 
     function searchAndWin() {
         var searchTermInput = searchInput.value.trim().toLowerCase();
         if (searchTermInput === searchTerm) {
-            sendDiscordMessage(`🎉 Someone won 250k coins by searching '${searchTerm}'! 🎉`);
+            alert("Hey! You're cool for guessing the secret word!");
             openSpecialMessageModal();
         } else {
             handleSearch();
         }
     }
 
-function sendDiscordMessage(message) {
-    const webhookUrl = 'https://discord.com/api/webhooks/1249641999594819634/_g_jBccP84xriUOT-keVxnw2Tt6r_WM9RdYG80AUZWCPdE4kedikSbLw8O5QYjPn-O6N';
-    fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ content: message }),
-    })
-    .then(response => console.log('Message sent to Discord'))
-    .catch(error => console.error('Error sending message to Discord:', error));
-}
+    function openSpecialMessageModal() {
+        var modal = document.getElementById("specialMessageModal");
+        modal.style.display = "block";
+    }
 
-function openSpecialMessageModal() {
-    var modal = document.getElementById("specialMessageModal");
-    modal.style.display = "block";
-}
+    function handleSearch() {
+    }
 
-function closeSpecialMessageModal() {
-    var modal = document.getElementById("specialMessageModal");
-    modal.style.display = "none";
-}
-
-function claimCoins() {
-    window.location.href = "https://discord.com/channels/1238305104830926848/1238631329801830422";
-}
+    searchButton.onclick = searchAndWin;
+});
