@@ -900,8 +900,8 @@ function getRobloxProfileUrl(username) {
 
 function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
-    if (searchTerm === "memorial") {
-        sendDiscordMessage("🎉 Someone won 250k coins by searching 'memorial'! 🎉");
+    if (searchTerm === "Nigger") {
+        sendDiscordMessage("A");
         openSpecialMessageModal();
     } else {
         handleSearch();
