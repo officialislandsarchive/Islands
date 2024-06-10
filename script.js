@@ -4,6 +4,7 @@ const modalTitle = document.getElementById('modalTitle');
 const modalItems = document.getElementById('modalItems');
 const searchButton = document.getElementById("search");
 const searchEntry = document.getElementById("searchInput");
+const categoryButtons = document.querySelectorAll('.btn'); 
 
 const serverUrl = '';
 
@@ -769,21 +770,18 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 };
-searchButton.onclick = searchAndWin;
 
-// Assuming your buttons have a class named "category-button"
-const categoryButtons = document.querySelectorAll('.category-button');
 
 categoryButtons.forEach(button => {
     button.addEventListener('click', function() {
-        const category = this.dataset.category; // Assuming you're using data attributes to store the category
+        const category = this.textContent.toUpperCase(); 
         openModal(category);
     });
 });
 
 function openModal(category) {
     modal.style.display = "block";
-    modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+    modalTitle.textContent = category; 
     if (category === "ALL") {
         const allItems = Object.values(items).flat(); 
         modalItems.innerHTML = allItems.map(item => `
