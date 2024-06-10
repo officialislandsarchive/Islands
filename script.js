@@ -923,3 +923,21 @@ function claimCoins() {
 }
 
 searchButton.onclick = searchAndWin;
+
+
+// Add this JavaScript code to your script.js file
+document.addEventListener('DOMContentLoaded', function () {
+    createRain();
+});
+
+function createRain() {
+    const numDrops = 100; // Change this number to adjust the number of raindrops
+
+    for (let i = 0; i < numDrops; i++) {
+        const drop = document.createElement('div');
+        drop.className = 'drop';
+        drop.style.left = `${Math.random() * 100}%`;
+        drop.style.animationDuration = `${Math.random() * 2 + 1}s`; // Adjust animation duration
+        document.querySelector('.rain').appendChild(drop);
+    }
+}
