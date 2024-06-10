@@ -751,13 +751,13 @@ let items = {
 
 
 const creditsData = [
-  {
-    name: "Xx_Gamer462",
-    surname: "",
-    role: "Website Manager/Developer",
-    description: "The one who manages everything!",
-    image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459862811054222/noFilter.png?ex=6654d318&is=66538198&hm=42616a4e58ce752027cbd83803ffd3db443216cf581d77e7c83a1d92f7413c71&"
-  }
+    {
+        name: "Xx_Gamer462",
+        surname: "",
+        role: "Website Manager/Developer",
+        description: "The one who manages everything!",
+        image: "https://cdn.discordapp.com/attachments/1239379916257230869/1241459862811054222/noFilter.png?ex=6654d318&is=66538198&hm=42616a4e58ce752027cbd83803ffd3db443216cf581d77e7c83a1d92f7413c71&"
+    }
 ];
 
 fetchJson();
@@ -769,7 +769,17 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 };
-searchButton.onclick = handleSearch;
+searchButton.onclick = searchAndWin;
+
+// Assuming your buttons have a class named "category-button"
+const categoryButtons = document.querySelectorAll('.category-button');
+
+categoryButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const category = this.dataset.category; // Assuming you're using data attributes to store the category
+        openModal(category);
+    });
+});
 
 function openModal(category) {
     modal.style.display = "block";
@@ -827,26 +837,6 @@ function handleSearch() {
     console.log(results);
 }
 
-function openModal(category) {
-    modal.style.display = "block";
-    modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-    if (category === "ALL") {
-        modalItems.innerHTML = items["ALL"].map(item => `
-            <div class="item-box">
-                <span class="item-name">${item.name}</span>
-                <span class="coin-value">Coin Value: ${item.value}</span>
-            </div>
-        `).join('');
-    } else {
-        modalItems.innerHTML = items[category].map(item => `
-            <div class="item-box">
-                <span class="item-name">${item.name}</span>
-                <span class="coin-value">Coin Value: ${item.value}</span>
-            </div>
-        `).join('');
-    }
-}
-
 function updateJson(data) {
     for (const key in items) {
         items[key].forEach(item => {
@@ -888,23 +878,6 @@ const visited = sessionStorage.getItem('visited');
 if (!visited) {
     sendDiscordMessage("🚀Someone Visited The Website!🚀");
     sessionStorage.setItem('visited', true);
-}
-
-function showCredits() {
-    modal.style.display = "block";
-    modalTitle.textContent = "Credits";
-    modalItems.innerHTML = creditsData.map(person => `
-        <a href="${getRobloxProfileUrl(person.name)}" target="_blank" class="credit-link">
-            <div class="item-box">
-                <img src="${person.image}" alt="${person.name}" class="credit-image">
-                <div class="credit-details">
-                    <div class="credit-name">${person.name} ${person.surname}</div>
-                    <div class="credit-role">${person.role}</div>
-                    <div class="credit-description">${person.description}</div>
-                </div>
-            </div>
-        </a>
-    `).join('');
 }
 
 function getRobloxProfileUrl(username) {
