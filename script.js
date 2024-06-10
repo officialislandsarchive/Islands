@@ -8,9 +8,7 @@ const searchEntry = document.getElementById("searchInput");
 const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.riker.replit.dev:3001/';
 
 let items = {
-    "ALL": [
-{ "name": "testing", "value": "0" },
-    ],
+    "ALL": [],
     "COMBAT": [
 { "name": "Ancient Longbow", "value": "0" },
 { "name": "Antler Hammer", "value": "0" },
