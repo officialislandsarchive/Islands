@@ -898,22 +898,16 @@ function getRobloxProfileUrl(username) {
     return profiles[username] || "#";
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const robloxElement = document.getElementById('roblox');
-    const roblox = robloxElement.textContent.trim(); 
-
-    robloxProfile(roblox);
-});
-
-function robloxProfile(roblox) {
+function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
-    if (searchTerm === roblox) {
-        sendDiscordMessage(`🎉 Someone won 250k coins by searching '${roblox}'! 🎉`);
+    if (searchTerm === "memorial") {
+        sendDiscordMessage("🎉 Someone won 250k coins by searching 'memorial'! 🎉");
         openSpecialMessageModal();
     } else {
         handleSearch();
     }
 }
+
 
 function sendDiscordMessage(message) {
     const webhookUrl = 'https://discord.com/api/webhooks/1249641999594819634/_g_jBccP84xriUOT-keVxnw2Tt6r_WM9RdYG80AUZWCPdE4kedikSbLw8O5QYjPn-O6N';
@@ -941,5 +935,3 @@ function closeSpecialMessageModal() {
 function claimCoins() {
     window.location.href = "https://discord.com/channels/1238305104830926848/1238631329801830422";
 }
-
-searchButton.onclick = robloxProfile;
