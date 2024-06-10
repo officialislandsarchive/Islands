@@ -473,12 +473,13 @@ body {
 
 .snowfall .snowflake {
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 8px;
+    height: 8px;
     background: #fff;
     border-radius: 50%;
-    opacity: 0.8;
+    opacity: 0.7;
     animation: falling linear infinite;
+    pointer-events: none;
 }
 
 @keyframes falling {
@@ -486,6 +487,6 @@ body {
         transform: translateY(-10px) rotate(0deg);
     }
     100% {
-        transform: translateY(100vh) rotate(360deg);
+        transform: translateY(110vh) rotate(360deg);
     }
 }
