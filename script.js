@@ -147,15 +147,24 @@ function handleSearch() {
     console.log(results);
 }
 
-function openModelFromArray(array) {
+function openModal(category) {
     modal.style.display = "block";
-    modalTitle.textContent = "Results";
-    modalItems.innerHTML = array.map(item => `
-        <div class="item-box">
-            <span class="item-name">${item.name}</span>
-            <span class="coin-value">Coin Value: ${item.value}</span>
-        </div>
-    `).join('');
+    modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+    if (category === "ALL") {
+        modalItems.innerHTML = items["ALL"].map(item => `
+            <div class="item-box">
+                <span class="item-name">${item.name}</span>
+                <span class="coin-value">Coin Value: ${item.value}</span>
+            </div>
+        `).join('');
+    } else {
+        modalItems.innerHTML = items[category].map(item => `
+            <div class="item-box">
+                <span class="item-name">${item.name}</span>
+                <span class="coin-value">Coin Value: ${item.value}</span>
+            </div>
+        `).join('');
+    }
 }
 
 function updateJson(data) {
