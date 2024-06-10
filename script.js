@@ -825,7 +825,7 @@ for (let category in items) {
     }
 }
 
-function openModal(category) {
+function openModelFromArray(array) {
     modal.style.display = "block";
     modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
     modalItems.innerHTML = items[category].map(item => `
