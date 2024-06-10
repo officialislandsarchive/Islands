@@ -9,7 +9,7 @@ const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.
 
 let items = {
    "crops": [
-    
+      { name: "Testing", value: "25" },
     ],
 
     "blocks": [
