@@ -8,7 +8,61 @@ const searchEntry = document.getElementById("searchInput");
 const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.riker.replit.dev:3001/';
 
 let items = {
+ "all": [
+    { name: "testing", value: "1" },
+],
  
+"combat": [
+    { name: "testing", value: "1" },
+],
+ 
+"mineral": [
+    { name: "testing", value: "1" },
+],
+ 
+"decor": [
+    { name: "testing", value: "1" },
+],
+ 
+"tools": [
+    { name: "testing", value: "1" },
+],
+ 
+"crops": [
+    { name: "testing", value: "1" },
+],
+ 
+"flowers": [
+    { name: "testing", value: "1" },
+],
+ 
+"food": [
+    { name: "testing", value: "1" },
+],
+ 
+"industrial": [
+    { name: "testing", value: "1" },
+],
+ 
+"animals": [
+    { name: "testing", value: "1" },
+],
+ 
+"blocks": [
+    { name: "testing", value: "1" },
+],
+ 
+"totems": [
+    { name: "testing", value: "1" },
+],
+ 
+"lumber": [
+    { name: "testing", value: "1" },
+],
+ 
+"misc": [
+    { name: "testing", value: "1" },
+],
 };
 
 const creditsData = [
