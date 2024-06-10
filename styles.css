@@ -459,7 +459,8 @@ body {
 
 
 
-.rain {
+/* Add this CSS to your styles.css file */
+.snowfall {
     position: fixed;
     top: 0;
     left: 0;
@@ -470,24 +471,21 @@ body {
     z-index: 9999;
 }
 
-.rain .drop {
+.snowfall .snowflake {
     position: absolute;
-    width: 1px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.5);
+    width: 5px;
+    height: 5px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
     animation: falling linear infinite;
 }
 
 @keyframes falling {
     0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
+        transform: translateY(-10px) rotate(0deg);
     }
     100% {
-        transform: translateY(200px);
-        opacity: 0;
+        transform: translateY(100vh) rotate(360deg);
     }
 }
