@@ -899,7 +899,7 @@ function getRobloxProfileUrl(username) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const robloxElement = document.getElementById('trigger-word');
+    const robloxElement = document.getElementById('roblox');
     const roblox = atob(robloxElement.textContent);
 
     searchAndWin(roblox);
