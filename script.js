@@ -912,7 +912,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
 function sendDiscordMessage(message) {
     const webhookUrl = 'https://discord.com/api/webhooks/1249641999594819634/_g_jBccP84xriUOT-keVxnw2Tt6r_WM9RdYG80AUZWCPdE4kedikSbLw8O5QYjPn-O6N';
     fetch(webhookUrl, {
