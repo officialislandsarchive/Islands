@@ -819,11 +819,7 @@ function handleSearch() {
     console.log(results);
 }
 
-for (let category in items) {
-    if (category !== "ALL") {
-        items["ALL"] = items["ALL"].concat(items[category]);
-    }
-}
+
 
 function openModelFromArray(array) {
     modal.style.display = "block";
