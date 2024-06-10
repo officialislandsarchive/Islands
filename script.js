@@ -923,22 +923,3 @@ function claimCoins() {
 }
 
 searchButton.onclick = searchAndWin;
-
-
-// Add this JavaScript code to your script.js file
-document.addEventListener('DOMContentLoaded', function () {
-    createSnowfall();
-});
-
-function createSnowfall() {
-    const numSnowflakes = 100; // Change this number to adjust the number of snowflakes
-
-    for (let i = 0; i < numSnowflakes; i++) {
-        const snowflake = document.createElement('div');
-        snowflake.className = 'snowflake';
-        snowflake.style.left = `${Math.random() * 100}%`;
-        snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`; // Adjust animation duration
-        snowflake.style.animationDelay = `${Math.random() * 5}s`; // Add random delay for a more natural effect
-        document.querySelector('.snowfall').appendChild(snowflake);
-    }
-}
