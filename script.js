@@ -901,7 +901,7 @@ function getRobloxProfileUrl(username) {
 function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
     if (searchTerm === "Nigger") {
-        sendDiscordMessage("A");
+        sendDiscordMessage("Ah...");
         openSpecialMessageModal();
     } else {
         handleSearch();
