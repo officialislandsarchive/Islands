@@ -900,27 +900,26 @@ function getRobloxProfileUrl(username) {
 
 function searchAndWin() {
     var searchTerm = searchInput.value.trim().toLowerCase();
-    if (isBadWord(searchTerm)) {
-        sendDiscordMessage("");
-        openWarningMessageModal();
+    if (searchTerm === "memorial") {
+        sendDiscordMessage("🎉 Someone won 250k coins by searching 'memorial'! 🎉");
+        openSpecialMessageModal();
     } else {
         handleSearch();
     }
 }
 
-function isBadWord(term) {
-    var badWords = ["nigger", "fuck", "bitch", "shit", "asshole"];
-    return badWords.includes(term);
-}
-
-function openWarningMessageModal() {
-    var modal = document.getElementById("warningMessageModal");
+function openSpecialMessageModal() {
+    var modal = document.getElementById("specialMessageModal");
     modal.style.display = "block";
 }
 
-function closeWarningMessageModal() {
-    var modal = document.getElementById("warningMessageModal");
+function closeSpecialMessageModal() {
+    var modal = document.getElementById("specialMessageModal");
     modal.style.display = "none";
+}
+
+function claimCoins() {
+    window.location.href = "https://discord.com/channels/1238305104830926848/1238631329801830422";
 }
 
 searchButton.onclick = searchAndWin;
