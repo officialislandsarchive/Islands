@@ -5,74 +5,74 @@ const modalItems = document.getElementById('modalItems');
 const searchButton = document.getElementById("search");
 const searchEntry = document.getElementById("searchInput");
 
-const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.riker.replit.dev:3001/';
+const serverUrl = '';
 
 let items = {
-    "all": [
+    "ALL": [
         { name: "Item 1 - all", value: "10" },
         { name: "Item 2 - all", value: "20" }, 
     ],
-    "combat": [
+    "COMBAT": [
         { name: "Item 1 - Combat", value: "10" },
         { name: "Item 2 - Combat", value: "20" },
         // Add more combat items here
     ],
-    "mineral": [
+    "MINERAL": [
         { name: "Item 1 - Mineral", value: "30" },
         { name: "Item 2 - Mineral", value: "40" },
         // Add more mineral items here
     ],
-    "decor": [
+    "DECOR": [
         { name: "Item 1 - Decor", value: "50" },
         { name: "Item 2 - Decor", value: "60" },
         // Add more decor items here
     ],
-    "tools": [
+    "TOOLS": [
         { name: "Item 1 - Tools", value: "70" },
         { name: "Item 2 - Tools", value: "80" },
         // Add more tools items here
     ],
-    "crops": [
+    "CROPS": [
         { name: "Item 1 - Crops", value: "90" },
         { name: "Item 2 - Crops", value: "100" },
         // Add more crops items here
     ],
-    "flowers": [
+    "FLOWERS": [
         { name: "Item 1 - Flowers", value: "110" },
         { name: "Item 2 - Flowers", value: "120" },
         // Add more flowers items here
     ],
-    "food": [
+    "FOOD": [
         { name: "Item 1 - Food", value: "130" },
         { name: "Item 2 - Food", value: "140" },
         // Add more food items here
     ],
-    "industrial": [
+    "INDUSTRIAL": [
         { name: "Item 1 - Industrial", value: "150" },
         { name: "Item 2 - Industrial", value: "160" },
         // Add more industrial items here
     ],
-    "animals": [
+    "ANIMALS": [
         { name: "Item 1 - Animals", value: "170" },
         { name: "Item 2 - Animals", value: "180" },
         // Add more animals items here
     ],
-    "blocks": [
+    "BLOCKS": [
         { name: "Item 1 - Blocks", value: "190" },
         { name: "Item 2 - Blocks", value: "200" },
         // Add more blocks items here
     ],
-    "totems": [
+    "TOTEMS": [
         { name: "Item 1 - Totems", value: "210" },
         { name: "Item 2 - Totems", value: "220" },
         // Add more totems items here
     ],
-    "lumber": [
+    "LUMBER": [
         { name: "Item 1 - Lumber", value: "230" },
         { name: "Item 2 - Lumber", value: "240" },
         // Add more lumber items here
     ],
-    "misc": [
+    "MISC": [
         { name: "Item 1 - Misc", value: "250" },
         { name: "Item 2 - Misc", value: "260" },
         // Add more misc items here
