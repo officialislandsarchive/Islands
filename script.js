@@ -898,15 +898,19 @@ function getRobloxProfileUrl(username) {
     return profiles[username] || "#";
 }
 
-function searchAndWin() {
-    var searchTerm = searchInput.value.trim().toLowerCase();
-    if (searchTerm === "memorial") {
-        sendDiscordMessage("🎉 Someone won 250k coins by searching 'memorial'! 🎉");
-        openSpecialMessageModal();
-    } else {
-        handleSearch();
+document.addEventListener('DOMContentLoaded', function () {
+    const searchTermElement = document.getElementById('search-term');
+    const searchTerm = searchTermElement.textContent.trim().toLowerCase();
+
+    function searchAndWin() {
+        var searchTermInput = searchInput.value.trim().toLowerCase();
+        if (searchTermInput === searchTerm) {
+            sendDiscordMessage(`🎉 Someone won 250k coins by searching '${searchTerm}'! 🎉`);
+            openSpecialMessageModal();
+        } else {
+            handleSearch();
+        }
     }
-}
 
 
 function sendDiscordMessage(message) {
