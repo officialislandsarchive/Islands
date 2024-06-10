@@ -104,12 +104,27 @@ searchButton.onclick = handleSearch;
 function openModal(category) {
     modal.style.display = "block";
     modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-    modalItems.innerHTML = items[category].map(item => `
-        <div class="item-box">
-            <span class="item-name">${item.name}</span>
-            <span class="coin-value">Coin Value: ${item.value}</span>
-        </div>
-    `).join('');
+    let allItems = [];
+    for (const key in items) {
+        if (items.hasOwnProperty(key)) {
+            allItems = allItems.concat(items[key]);
+        }
+    }
+    if (category === "ALL") {
+        modalItems.innerHTML = allItems.map(item => `
+            <div class="item-box">
+                <span class="item-name">${item.name}</span>
+                <span class="coin-value">Coin Value: ${item.value}</span>
+            </div>
+        `).join('');
+    } else {
+        modalItems.innerHTML = items[category].map(item => `
+            <div class="item-box">
+                <span class="item-name">${item.name}</span>
+                <span class="coin-value">Coin Value: ${item.value}</span>
+            </div>
+        `).join('');
+    }
 }
 
 function showCredits() {
