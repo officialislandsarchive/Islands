@@ -31,11 +31,11 @@
         <p class="note" style="font-size: 14px;">Price guide is limited to top traded items only.</p>
     </div>
     
-    <div class="search-container">
-        <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
-        <button id="search" class="search-btn">Search</button>
-    </div>
-
+  <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
+            <button id="search" class="search-btn" onclick="searchAndWin()">Search</button>
+        </div>
+    
     <div class="price-update">
         <a href="https://officialislandsarchive.github.io/Update-Prices/" class="btn" target="_blank">Help Update Prices Here!</a>
     </div>
@@ -45,6 +45,15 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle"></h2>
             <div id="modalItems"></div>
+        </div>
+    </div>
+    
+<div id="specialMessageModal" class="modal">
+        <div class="modal-content special-message">
+            <span class="close" onclick="closeSpecialMessageModal()">&times;</span>
+            <h2>🎉 Congratulations! 🎉</h2>
+            <p>You won the 250k coins!</p>
+            <button onclick="claimCoins()" class="claim-btn">Click here to claim</button>
         </div>
     </div>
 
@@ -64,7 +73,6 @@
                 if (event.key === "Enter") {
                     event.preventDefault();
                     console.log("Search triggered");
-                    // Add your search functionality here
                 }
             });
         });
