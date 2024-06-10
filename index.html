@@ -6,6 +6,106 @@
     <title>Islands Inventory Catalog</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .buttons-container .btn {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buttons-container .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .search-bar {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-btn {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: 1px solid #28a745;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-btn:hover {
+            background-color: #218838;
+        }
+
+        .price-update {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .price-update .btn {
+            background-color: #17a2b8;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .price-update .btn:hover {
+            background-color: #138496;
+        }
+
+        .credits-btn-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .credits-btn {
+            background-color: #ffc107;
+            color: black;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .credits-btn:hover {
+            background-color: #e0a800;
+        }
+
         .special-message {
             text-align: center;
             padding: 40px;
@@ -58,11 +158,27 @@
             background-color: #ff007f;
             border-color: #fff;
         }
+
+        .title-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .title-container h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .price-guide-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Islands Inventory Catalog</h1>
         <div class="buttons-container">
             <button class="btn" onclick="openModal('ALL')">ALL</button>
             <button class="btn" onclick="openModal('COMBAT')">COMBAT</button>
@@ -78,17 +194,22 @@
             <button class="btn" onclick="openModal('TOTEMS')">TOTEMS</button>            
             <button class="btn" onclick="openModal('LUMBER')">LUMBER</button>            
             <button class="btn" onclick="openModal('MISC')">MISC</button>            
-
         </div>
         <div class="search-container">
             <input type="text" id="searchInput" class="search-bar" placeholder="Search...">
             <button id="search" class="search-btn" onclick="searchAndWin()">Search</button>
         </div>
     </div>
+    
+    <div class="title-container">
+        <h1>Islands Inventory Catalog</h1>
+    </div>
+
     <div class="price-update">
         <a href="https://officialislandsarchive.github.io/Update-Prices/" class="btn" target="_blank">Help Update Prices Here!</a>
         <div id="money-btn-box" data-identifier="230b97d62390767926ej932e790623j9e42379602e"></div>
     </div>
+
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -96,6 +217,7 @@
             <div id="modalItems"></div>
         </div>
     </div>
+
     <div id="specialMessageModal" class="modal">
         <div class="modal-content special-message">
             <span class="close" onclick="closeSpecialMessageModal()">&times;</span>
@@ -104,11 +226,18 @@
             <button onclick="claimCoins()" class="claim-btn">Click here to claim</button>
         </div>
     </div>
+
     <div class="credits-btn-container">
         <button id="creditsBtn" class="btn credits-btn">Credits</button>
     </div>
+
+    <div class="price-guide-info">
+        <p>Price guide is maintained by sellers in the community. Join the Discord Server: </p>
+        <p>Price Guide platform created by Josh (Josh does not set prices.)</p>
+    </div>
+
     <script src="script.js"></script>
-        <script>
+    <script>
         document.addEventListener("keyup", function(event) {
             if (event.key === "Enter") {
                 if (document.activeElement.id === "searchInput") {
