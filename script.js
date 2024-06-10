@@ -899,16 +899,16 @@ function getRobloxProfileUrl(username) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const triggerWordElement = document.getElementById('trigger-word');
-    const triggerWord = atob(triggerWordElement.textContent);
+    const robloxElement = document.getElementById('trigger-word');
+    const roblox = atob(robloxElement.textContent);
 
-    searchAndWin(triggerWord);
+    searchAndWin(roblox);
 });
 
-function searchAndWin(triggerWord) {
+function searchAndWin(roblox) {
     var searchTerm = searchInput.value.trim().toLowerCase();
-    if (searchTerm === triggerWord) {
-        sendDiscordMessage(`🎉 Someone won 250k coins by searching '${triggerWord}'! 🎉`);
+    if (searchTerm === roblox) {
+        sendDiscordMessage(`🎉 Someone won 250k coins by searching '${roblox}'! 🎉`);
         openSpecialMessageModal();
     } else {
         handleSearch();
