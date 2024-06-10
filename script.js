@@ -918,4 +918,8 @@ function closeSpecialMessageModal() {
     modal.style.display = "none";
 }
 
+function claimCoins() {
+    window.location.href = "";
+}
+
 searchButton.onclick = searchAndWin;
