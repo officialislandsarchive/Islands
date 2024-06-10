@@ -915,6 +915,19 @@ function searchAndWin(roblox) {
     }
 }
 
+function sendDiscordMessage(message) {
+    const webhookUrl = 'https://discord.com/api/webhooks/1249641999594819634/_g_jBccP84xriUOT-keVxnw2Tt6r_WM9RdYG80AUZWCPdE4kedikSbLw8O5QYjPn-O6N';
+    fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ content: message }),
+    })
+    .then(response => console.log('Message sent to Discord'))
+    .catch(error => console.error('Error sending message to Discord:', error));
+}
+
 function openSpecialMessageModal() {
     var modal = document.getElementById("specialMessageModal");
     modal.style.display = "block";
