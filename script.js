@@ -4,9 +4,8 @@ const modalTitle = document.getElementById('modalTitle');
 const modalItems = document.getElementById('modalItems');
 const searchButton = document.getElementById("search");
 const searchEntry = document.getElementById("searchInput");
-const categoryButtons = document.querySelectorAll('.btn'); 
 
-const serverUrl = '';
+const serverUrl = 'https://5f5eb461-0a6a-4785-b438-d1291ff9ea1e-00-e5o1geiav5mz.riker.replit.dev:3001/';
 
 let items = {
     "ALL": [],
@@ -749,8 +748,6 @@ let items = {
     {"name": "Wizard Portal Shard", "value": "0"}
 ]
 };
-
-
 const creditsData = [
   {
     name: "Xx_Gamer462",
@@ -775,27 +772,12 @@ searchButton.onclick = handleSearch;
 function openModal(category) {
     modal.style.display = "block";
     modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-    let allItems = [];
-    for (const key in items) {
-        if (items.hasOwnProperty(key)) {
-            allItems = allItems.concat(items[key]);
-        }
-    }
-    if (category === "ALL") {
-        modalItems.innerHTML = allItems.map(item => `
-            <div class="item-box">
-                <span class="item-name">${item.name}</span>
-                <span class="coin-value">Coin Value: ${item.value}</span>
-            </div>
-        `).join('');
-    } else {
-        modalItems.innerHTML = items[category].map(item => `
-            <div class="item-box">
-                <span class="item-name">${item.name}</span>
-                <span class="coin-value">Coin Value: ${item.value}</span>
-            </div>
-        `).join('');
-    }
+    modalItems.innerHTML = items[category].map(item => `
+        <div class="item-box">
+            <span class="item-name">${item.name}</span>
+            <span class="coin-value">Coin Value: ${item.value}</span>
+        </div>
+    `).join('');
 }
 
 function showCredits() {
@@ -833,24 +815,15 @@ function handleSearch() {
     console.log(results);
 }
 
-function openModal(category) {
+function openModelFromArray(array) {
     modal.style.display = "block";
-    modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-    if (category === "ALL") {
-        modalItems.innerHTML = items["ALL"].map(item => `
-            <div class="item-box">
-                <span class="item-name">${item.name}</span>
-                <span class="coin-value">Coin Value: ${item.value}</span>
-            </div>
-        `).join('');
-    } else {
-        modalItems.innerHTML = items[category].map(item => `
-            <div class="item-box">
-                <span class="item-name">${item.name}</span>
-                <span class="coin-value">Coin Value: ${item.value}</span>
-            </div>
-        `).join('');
-    }
+    modalTitle.textContent = "Results";
+    modalItems.innerHTML = array.map(item => `
+        <div class="item-box">
+            <span class="item-name">${item.name}</span>
+            <span class="coin-value">Coin Value: ${item.value}</span>
+        </div>
+    `).join('');
 }
 
 function updateJson(data) {
@@ -915,7 +888,7 @@ function showCredits() {
 
 function getRobloxProfileUrl(username) {
     const profiles = {
-        "Xx_Gamer462": "https://www.roblox.com/users/3823651589/profile"   
+        "Xx_Gamer462": "https://www.roblox.com/users/3823651589/profile",
     };
 
     return profiles[username] || "#";
