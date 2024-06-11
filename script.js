@@ -819,12 +819,10 @@ function handleSearch() {
     console.log(results);
 }
 
-
-
 function openModelFromArray(array) {
     modal.style.display = "block";
-    modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-    modalItems.innerHTML = items[category].map(item => `
+    modalTitle.textContent = "Search Results"; 
+    modalItems.innerHTML = array.map(item => `
         <div class="item-box">
             <span class="item-name">${item.name}</span>
             <span class="coin-value">Coin Value: ${item.value}</span>
